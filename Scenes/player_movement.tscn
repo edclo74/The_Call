@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cduw6k1jytffx"]
 
+[ext_resource type="Script" uid="uid://6bsvigauc3dq" path="res://Scenes/spot_light_3d.gd" id="2_4nywd"]
 [ext_resource type="Script" uid="uid://vsk426dhulub" path="res://character_body_3d.gd" id="2_b052v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
@@ -10,9 +11,11 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_yrei1")
 
 [sub_resource type="Environment" id="Environment_dfbmq"]
-background_mode = 2
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_4nywd")
+ambient_light_source = 2
+ambient_light_color = Color(0.3328807, 0.33288068, 0.33288068, 1)
+ambient_light_energy = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
@@ -45,11 +48,14 @@ mesh = SubResource("CapsuleMesh_b052v")
 shape = SubResource("CapsuleShape3D_k0mwo")
 
 [node name="Hand" type="Node3D" parent="CharacterBody3D" unique_id=1351255725]
+transform = Transform3D(0.99999994, 0, -7.450581e-09, 0, 1, 0, 7.450581e-09, 0, 0.99999994, 0, 0, 5.9604645e-08)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Hand" unique_id=1634954278]
-transform = Transform3D(0.031428248, 0, -0.99950606, 0, 1, 0, 0.99950606, 0, 0.031428248, 0.5292753, 0, 0)
-spot_range = 11.76
-spot_angle = 15.0
+transform = Transform3D(-0.99772215, 0, -0.06745812, 0, 1, 0, 0.06745812, 0, -0.99772215, -0.60801363, 0, 0.6394844)
+light_energy = 3.376
+spot_range = 12.895
+spot_angle = 33.897423
+script = ExtResource("2_4nywd")
 
 [node name="floor" type="MeshInstance3D" parent="." unique_id=344129153]
 transform = Transform3D(1.2950001, 2.2128006e-09, -1.3969839e-09, -1.283297e-09, 1.295, 0, -2.3283064e-10, 4.656613e-10, 1.2950001, 0.23372316, -1.7025725, -0.023921013)
