@@ -24,6 +24,11 @@ func _ready():
 func _process(delta):
 	hand.rotation.y = camera_x_rotation
 func _physics_process(delta):
+	
+	
+	if %SeeCast.is_colliding():
+		var target = %SeeCast.get_collider()
+		print(target)
 	var direction = Vector3.ZERO
 	if Input.is_action_pressed("move_right"):
 		direction.x -= 1

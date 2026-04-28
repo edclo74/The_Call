@@ -14,7 +14,6 @@ func _process(_delta):
 		hidden = !hidden
 	
 	if camera:
-		# Make the spotlight look in the same direction as the camera
+		# Make the flashlight look in the same direction as the camera
 		global_transform.basis = camera.global_transform.basis
-		# Optional: Keep the light positioned at the camera's position
 		global_position = camera.global_position

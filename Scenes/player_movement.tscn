@@ -29,12 +29,17 @@ size = Vector3(36.11, 1, 33.16)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrei1"]
 data = PackedVector3Array(-18.055, 0.5, 16.58, 18.055, 0.5, 16.58, -18.055, -0.5, 16.58, 18.055, 0.5, 16.58, 18.055, -0.5, 16.58, -18.055, -0.5, 16.58, 18.055, 0.5, -16.58, -18.055, 0.5, -16.58, 18.055, -0.5, -16.58, -18.055, 0.5, -16.58, -18.055, -0.5, -16.58, 18.055, -0.5, -16.58, 18.055, 0.5, 16.58, 18.055, 0.5, -16.58, 18.055, -0.5, 16.58, 18.055, 0.5, -16.58, 18.055, -0.5, -16.58, 18.055, -0.5, 16.58, -18.055, 0.5, -16.58, -18.055, 0.5, 16.58, -18.055, -0.5, -16.58, -18.055, 0.5, 16.58, -18.055, -0.5, 16.58, -18.055, -0.5, -16.58, 18.055, 0.5, 16.58, -18.055, 0.5, 16.58, 18.055, 0.5, -16.58, -18.055, 0.5, 16.58, -18.055, 0.5, -16.58, 18.055, 0.5, -16.58, -18.055, -0.5, 16.58, 18.055, -0.5, 16.58, -18.055, -0.5, -16.58, 18.055, -0.5, 16.58, 18.055, -0.5, -16.58, -18.055, -0.5, -16.58)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_4nywd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dfbmq"]
+
 [node name="Node3D" type="Node3D" unique_id=1982909402]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1308356630]
 environment = SubResource("Environment_dfbmq")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=15348134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9633427, 0, 0)
 script = ExtResource("2_b052v")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1714521243]
@@ -57,6 +62,11 @@ spot_range = 12.895
 spot_angle = 33.897423
 script = ExtResource("2_4nywd")
 
+[node name="SeeCast" type="RayCast3D" parent="CharacterBody3D" unique_id=1314134002]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1913555, 0, 0.6, 0)
+target_position = Vector3(0, 0, 1.775)
+
 [node name="floor" type="MeshInstance3D" parent="." unique_id=344129153]
 transform = Transform3D(1.2950001, 2.2128006e-09, -1.3969839e-09, -1.283297e-09, 1.295, 0, -2.3283064e-10, 4.656613e-10, 1.2950001, 0.23372316, -1.7025725, -0.023921013)
 mesh = SubResource("BoxMesh_k0mwo")
@@ -74,3 +84,12 @@ mesh = SubResource("BoxMesh_k0mwo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D" unique_id=842938710]
 shape = SubResource("ConcavePolygonShape3D_yrei1")
+
+[node name="paper" type="StaticBody3D" parent="." unique_id=1492204480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.758522, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="paper" unique_id=234736884]
+mesh = SubResource("CylinderMesh_4nywd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="paper" unique_id=2061727692]
+shape = SubResource("CylinderShape3D_dfbmq")
