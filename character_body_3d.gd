@@ -7,38 +7,51 @@ var player_view
 @onready var flashlight = $Hand/SpotLight3D
 var sprint_speed = 2
 var mouse_sensitivity = 0.002
-@onready var menu_instance = $PauseMenu
-
-
-
+@onready var menu_instance = %PauseMenu
+var menu_on = false
 var camera_x_rotation = 0.0
 var target_velocity = Vector3.ZERO
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		# Rotate body horizontally, camera vertically
-		rotate_y(-event.relative.x * mouse_sensitivity) #
-		# Accumulate and clamp vertical rotation
+		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera_x_rotation -= event.relative.y * mouse_sensitivity
 		camera_x_rotation = clamp(camera_x_rotation, deg_to_rad(-70), deg_to_rad(80))
 		camera.rotation.x = camera_x_rotation
-		
+
 func _ready():
+	menu_instance.resume.connect(unpause)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	menu_instance.hide()
+
+func unpause():
+	menu_instance.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _process(delta):
 	hand.rotation.y = camera_x_rotation
 	if Input.is_action_just_pressed("pause_menu"):
-		menu_instance.show()
-	#
-	
+		menu_on = !menu_on
+		if menu_on:
+			menu_instance.show()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			menu_instance.hide()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+ 
+
+func _on_button_pressed():
+	print("Button was pressed!")
+
 func _physics_process(delta):
-	
-	
 	if %SeeCast.is_colliding():
 		var target = %SeeCast.get_collider()
-		print(target)
+		if target.has_method("interact"):
+			$CanvasLayer/BoxContainer/Label.show()
+			print("You can pickup this item!")
+		else:
+			$CanvasLayer/BoxContainer/Label.hide()
+
 	var direction = Vector3.ZERO
 	if Input.is_action_pressed("move_right"):
 		direction.x -= 1
@@ -48,22 +61,18 @@ func _physics_process(delta):
 		direction.z -= 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z += 1
-	
+
 	if direction != Vector3.ZERO:
-		direction = direction.normalized() 
+		direction = direction.normalized()
 		direction = basis * direction
 		if Input.is_action_pressed("move_sprint"):
-
 			direction *= sprint_speed
-	
+
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
-	
+
 	if not is_on_floor():
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+
 	velocity = target_velocity
 	move_and_slide()
-func toggle_menu():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	pass
-	menu_instance.visible = !menu_instance.visible

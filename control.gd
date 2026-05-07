@@ -1,10 +1,11 @@
 extends Control
 
 
-
+signal resume
 
 
 func _on_resume_pressed() -> void:
+	emit_signal("resume")
 	pass # Replace with function body.
 
 

@@ -47,7 +47,7 @@ mesh = SubResource("BoxMesh_k0mwo")
 shape = SubResource("ConcavePolygonShape3D_yrei1")
 
 [node name="wall" type="MeshInstance3D" parent="." unique_id=1655884066]
-transform = Transform3D(-5.660625e-08, -1.295, 0, 1.2950001, -5.6606247e-08, 0, 0, 0, 1.295, 2.8314772, -1.7025725, -0.023921013)
+transform = Transform3D(-5.660625e-08, -1.295, 0, 1.2950001, -5.6606247e-08, 0, 0, 0, 1.295, 28.187996, -1.7025725, -0.023921013)
 mesh = SubResource("BoxMesh_k0mwo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="wall" unique_id=976008796]
@@ -55,8 +55,8 @@ mesh = SubResource("BoxMesh_k0mwo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D" unique_id=842938710]
 shape = SubResource("ConcavePolygonShape3D_yrei1")
 
-[node name="paper" type="StaticBody3D" parent="." unique_id=1492204480]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.758522, 0, 0)
+[node name="paper" type="StaticBody3D" parent="." unique_id=1492204480 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.949063, -1.0927142, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="paper" unique_id=234736884]
 mesh = SubResource("CylinderMesh_4nywd")
