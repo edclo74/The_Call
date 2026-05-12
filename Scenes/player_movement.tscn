@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://di7i10565cjnc" path="res://Scenes/PlayerController.tscn" id="1_yrei1"]
 [ext_resource type="PackedScene" uid="uid://dv5d37xbrv02g" path="res://Hall.glb" id="2_4nywd"]
+[ext_resource type="PackedScene" uid="uid://6l3uof2boqkf" path="res://pickup.tscn" id="3_dfbmq"]
+[ext_resource type="PackedScene" uid="uid://bmmtyqjddo7ai" path="res://Untitled (21).glb" id="4_5yw4k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,17 +27,13 @@ size = Vector3(36.11, 1, 33.16)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrei1"]
 data = PackedVector3Array(-18.055, 0.5, 16.58, 18.055, 0.5, 16.58, -18.055, -0.5, 16.58, 18.055, 0.5, 16.58, 18.055, -0.5, 16.58, -18.055, -0.5, 16.58, 18.055, 0.5, -16.58, -18.055, 0.5, -16.58, 18.055, -0.5, -16.58, -18.055, 0.5, -16.58, -18.055, -0.5, -16.58, 18.055, -0.5, -16.58, 18.055, 0.5, 16.58, 18.055, 0.5, -16.58, 18.055, -0.5, 16.58, 18.055, 0.5, -16.58, 18.055, -0.5, -16.58, 18.055, -0.5, 16.58, -18.055, 0.5, -16.58, -18.055, 0.5, 16.58, -18.055, -0.5, -16.58, -18.055, 0.5, 16.58, -18.055, -0.5, 16.58, -18.055, -0.5, -16.58, 18.055, 0.5, 16.58, -18.055, 0.5, 16.58, 18.055, 0.5, -16.58, -18.055, 0.5, 16.58, -18.055, 0.5, -16.58, 18.055, 0.5, -16.58, -18.055, -0.5, 16.58, 18.055, -0.5, 16.58, -18.055, -0.5, -16.58, 18.055, -0.5, 16.58, 18.055, -0.5, -16.58, -18.055, -0.5, -16.58)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_4nywd"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_dfbmq"]
-
 [node name="Node3D" type="Node3D" unique_id=1982909402]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1308356630]
 environment = SubResource("Environment_dfbmq")
 
 [node name="CharacterBody3D" parent="." unique_id=1351378724 instance=ExtResource("1_yrei1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9633427, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9633427, 0.6653824, -59.62915)
 
 [node name="floor" type="MeshInstance3D" parent="." unique_id=344129153]
 transform = Transform3D(1.2950001, 2.2128006e-09, -1.3969839e-09, -1.283297e-09, 1.295, 0, -2.3283064e-10, 4.656613e-10, 1.2950001, 0.23372316, -42.12752, -0.023921013)
@@ -55,14 +53,11 @@ mesh = SubResource("BoxMesh_k0mwo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D" unique_id=842938710]
 shape = SubResource("ConcavePolygonShape3D_yrei1")
 
-[node name="paper" type="StaticBody3D" parent="." unique_id=1492204480 groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.949063, -1.0927142, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="paper" unique_id=234736884]
-mesh = SubResource("CylinderMesh_4nywd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="paper" unique_id=2061727692]
-shape = SubResource("CylinderShape3D_dfbmq")
-
 [node name="Anvil_Export_Temp" parent="." unique_id=1698743409 instance=ExtResource("2_4nywd")]
-transform = Transform3D(0.9932802, 0, -0.115734644, 0, 1, 0, 0.115734644, 0, 0.9932802, -17.068829, -2.5352488, -9.210299)
+transform = Transform3D(0.99989384, 0, 0.014572981, 0, 1, 0, -0.014572981, 0, 0.99989384, -21.962471, -2.5352488, -7.280862)
+
+[node name="Pickup" parent="." unique_id=458297649 instance=ExtResource("3_dfbmq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9512978, -0.24609363, -66.30141)
+
+[node name="Anvil_Export_Temp2" parent="." unique_id=193358885 instance=ExtResource("4_5yw4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.397542, -3.2961578, -79.55895)

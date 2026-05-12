@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://6l3uof2boqkf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pu7wf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqk3k"]
+
+[node name="Pickup" type="Area3D" unique_id=458297649 groups=["Pickup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009697676, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=68638679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1978885, -0.95138705, 1.246656)
+mesh = SubResource("BoxMesh_pu7wf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2124611093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1978885, -0.95138705, 1.246656)
+shape = SubResource("BoxShape3D_iqk3k")
