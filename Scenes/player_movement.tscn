@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dv5d37xbrv02g" path="res://Hall.glb" id="2_4nywd"]
 [ext_resource type="PackedScene" uid="uid://6l3uof2boqkf" path="res://pickup.tscn" id="3_dfbmq"]
 [ext_resource type="PackedScene" uid="uid://bmmtyqjddo7ai" path="res://Untitled (21).glb" id="4_5yw4k"]
+[ext_resource type="PackedScene" uid="uid://b27sjcqdm6hk1" path="res://PlzTest (14).glb" id="5_jfama"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,7 +34,7 @@ data = PackedVector3Array(-18.055, 0.5, 16.58, 18.055, 0.5, 16.58, -18.055, -0.5
 environment = SubResource("Environment_dfbmq")
 
 [node name="CharacterBody3D" parent="." unique_id=1351378724 instance=ExtResource("1_yrei1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9633427, 0.6653824, -59.62915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.3886, 67.41814, -82.166016)
 
 [node name="floor" type="MeshInstance3D" parent="." unique_id=344129153]
 transform = Transform3D(1.2950001, 2.2128006e-09, -1.3969839e-09, -1.283297e-09, 1.295, 0, -2.3283064e-10, 4.656613e-10, 1.2950001, 0.23372316, -42.12752, -0.023921013)
@@ -61,3 +62,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9512978, -0.24609363, -66.
 
 [node name="Anvil_Export_Temp2" parent="." unique_id=193358885 instance=ExtResource("4_5yw4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.397542, -3.2961578, -79.55895)
+
+[node name="Anvil_Export_Temp3" parent="." unique_id=893616378 instance=ExtResource("5_jfama")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.14203, 62.520573, -93.26654)
