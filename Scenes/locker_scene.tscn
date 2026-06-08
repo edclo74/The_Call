@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dat8rs1ts3c6e"]
 
 [ext_resource type="Texture2D" uid="uid://brhht0i0rdqr7" path="res://lockerthing_Steel_03_UV_H_CM_1.jpg" id="1_101b7"]
+[ext_resource type="Script" uid="uid://cf60dxudx544x" path="res://Scenes/locker_scene.gd" id="1_o4qo1"]
 [ext_resource type="Texture2D" uid="uid://b3a38wvisohio" path="res://lockerthing_iron_texture47.png" id="2_o4qo1"]
 [ext_resource type="Texture2D" uid="uid://dcim26tq1633c" path="res://lockerthing_url copy.png" id="3_gr1o2"]
 
@@ -642,6 +643,7 @@ data = PackedVector3Array(3.2784, 0, 15.451699, 2.6522, 1.9268999, -15.451699, 3
 
 [node name="Locker" type="Area3D" unique_id=659803548 groups=["Pickup"]]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+script = ExtResource("1_o4qo1")
 
 [node name="Cube_1_2_001" type="MeshInstance3D" parent="." unique_id=98059732]
 transform = Transform3D(1, 0, 0, 0, -0.011518863, -0.99993366, 0, 0.99993366, -0.011518863, -74.14113, -92.29165, 58.61213)

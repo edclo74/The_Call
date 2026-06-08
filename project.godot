@@ -15,6 +15,10 @@ run/main_scene="uid://cknkgc4f7w3h6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[aseprite]
+
+import/import_plugin/default_automatic_importer="SpriteFrames"
+
 [autoload]
 
 Global="*uid://be06jp1t1eel3"
@@ -23,6 +27,10 @@ Global="*uid://be06jp1t1eel3"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
 [global_group]
 
