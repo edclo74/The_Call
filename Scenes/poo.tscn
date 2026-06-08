@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cknkgc4f7w3h6"]
+
+[ext_resource type="VideoStream" uid="uid://dhr0yyw1hjtag" path="res://Scenes/video_done (1).ogv" id="1_1qmx1"]
+[ext_resource type="Script" uid="uid://cn2i5a0tfxu2p" path="res://Scenes/poo.gd" id="1_amrl7"]
+
+[node name="Control" type="Control" unique_id=2087167029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_amrl7")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=947035532]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("1_1qmx1")
+autoplay = true
+loop = true
+
+[node name="Button" type="Button" parent="." unique_id=42445877]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 907.0
+offset_right = 1056.0
+offset_bottom = 1009.0
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

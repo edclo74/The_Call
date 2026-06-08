@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cduw6k1jytffx"]
 
+[ext_resource type="Script" uid="uid://2fko3lie4jbw" path="res://Scenes/flickering_light.gd" id="1_jfama"]
 [ext_resource type="PackedScene" uid="uid://di7i10565cjnc" path="res://Scenes/PlayerController.tscn" id="1_yrei1"]
-[ext_resource type="PackedScene" uid="uid://dv5d37xbrv02g" path="res://Hall.glb" id="2_4nywd"]
 [ext_resource type="PackedScene" uid="uid://6l3uof2boqkf" path="res://pickup.tscn" id="3_dfbmq"]
-[ext_resource type="PackedScene" uid="uid://bmmtyqjddo7ai" path="res://Untitled (21).glb" id="4_5yw4k"]
-[ext_resource type="PackedScene" uid="uid://b27sjcqdm6hk1" path="res://PlzTest (14).glb" id="5_jfama"]
+[ext_resource type="PackedScene" uid="uid://i8qntkfjpisy" path="res://Scenes/Eddy is genuinely unintelligent 222.glb" id="4_5yw4k"]
+[ext_resource type="PackedScene" uid="uid://gx7gwuihk8we" path="res://batteries.tscn" id="5_jfama"]
+[ext_resource type="PackedScene" uid="uid://doalbd37ld0oh" path="res://Scenes/Eddy Sucks.glb" id="6_nntdv"]
+[ext_resource type="PackedScene" uid="uid://bddny4nd1k0hd" path="res://lockerthing.glb" id="7_hjxs2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,46 +24,35 @@ ambient_light_energy = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_k0mwo"]
-size = Vector3(36.11, 1, 33.16)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrei1"]
-data = PackedVector3Array(-18.055, 0.5, 16.58, 18.055, 0.5, 16.58, -18.055, -0.5, 16.58, 18.055, 0.5, 16.58, 18.055, -0.5, 16.58, -18.055, -0.5, 16.58, 18.055, 0.5, -16.58, -18.055, 0.5, -16.58, 18.055, -0.5, -16.58, -18.055, 0.5, -16.58, -18.055, -0.5, -16.58, 18.055, -0.5, -16.58, 18.055, 0.5, 16.58, 18.055, 0.5, -16.58, 18.055, -0.5, 16.58, 18.055, 0.5, -16.58, 18.055, -0.5, -16.58, 18.055, -0.5, 16.58, -18.055, 0.5, -16.58, -18.055, 0.5, 16.58, -18.055, -0.5, -16.58, -18.055, 0.5, 16.58, -18.055, -0.5, 16.58, -18.055, -0.5, -16.58, 18.055, 0.5, 16.58, -18.055, 0.5, 16.58, 18.055, 0.5, -16.58, -18.055, 0.5, 16.58, -18.055, 0.5, -16.58, 18.055, 0.5, -16.58, -18.055, -0.5, 16.58, 18.055, -0.5, 16.58, -18.055, -0.5, -16.58, 18.055, -0.5, 16.58, 18.055, -0.5, -16.58, -18.055, -0.5, -16.58)
-
 [node name="Node3D" type="Node3D" unique_id=1982909402]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1867338001]
+transform = Transform3D(1, 0, 0, 0, 0.016684622, 0.9998608, 0, -0.9998608, 0.016684622, 191.85246, 135.09933, 58.73616)
+light_color = Color(1, 0.7647059, 0.09019608, 1)
+light_energy = 10.0
+spot_range = 22.067
+script = ExtResource("1_jfama")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1308356630]
 environment = SubResource("Environment_dfbmq")
 
 [node name="CharacterBody3D" parent="." unique_id=1351378724 instance=ExtResource("1_yrei1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.3886, 67.41814, -82.166016)
-
-[node name="floor" type="MeshInstance3D" parent="." unique_id=344129153]
-transform = Transform3D(1.2950001, 2.2128006e-09, -1.3969839e-09, -1.283297e-09, 1.295, 0, -2.3283064e-10, 4.656613e-10, 1.2950001, 0.23372316, -42.12752, -0.023921013)
-mesh = SubResource("BoxMesh_k0mwo")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="floor" unique_id=223803063]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D" unique_id=899071696]
-shape = SubResource("ConcavePolygonShape3D_yrei1")
-
-[node name="wall" type="MeshInstance3D" parent="." unique_id=1655884066]
-transform = Transform3D(-5.660625e-08, -1.295, 0, 1.2950001, -5.6606247e-08, 0, 0, 0, 1.295, 28.187996, -1.7025725, -0.023921013)
-mesh = SubResource("BoxMesh_k0mwo")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="wall" unique_id=976008796]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D" unique_id=842938710]
-shape = SubResource("ConcavePolygonShape3D_yrei1")
-
-[node name="Anvil_Export_Temp" parent="." unique_id=1698743409 instance=ExtResource("2_4nywd")]
-transform = Transform3D(0.99989384, 0, 0.014572981, 0, 1, 0, -0.014572981, 0, 0.99989384, -21.962471, -2.5352488, -7.280862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.98732, 121.404396, 21.15731)
 
 [node name="Pickup" parent="." unique_id=458297649 instance=ExtResource("3_dfbmq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9512978, -0.24609363, -66.30141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.61684, 120.31681, 7.4573727)
 
-[node name="Anvil_Export_Temp2" parent="." unique_id=193358885 instance=ExtResource("4_5yw4k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.397542, -3.2961578, -79.55895)
+[node name="Pickup2" parent="." unique_id=1724841091 instance=ExtResource("3_dfbmq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.38818, 120.31681, 18.421986)
 
-[node name="Anvil_Export_Temp3" parent="." unique_id=893616378 instance=ExtResource("5_jfama")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.14203, 62.520573, -93.26654)
+[node name="Anvil_Export_Temp2" parent="." unique_id=320980348 instance=ExtResource("4_5yw4k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.49326, 118.76272, -47.79757)
+
+[node name="Batteries2" parent="." unique_id=1071088791 instance=ExtResource("5_jfama")]
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 190.3191, 119.34905, 55.426712)
+
+[node name="Anvil_Export_Temp" parent="." unique_id=128475273 instance=ExtResource("6_nntdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.89685, 119.338135, 31.20084)
+
+[node name="Anvil_Export_Temp3" parent="." unique_id=669830339 instance=ExtResource("7_hjxs2")]
+transform = Transform3D(-0.5648888, 0, -0.011211376, 0, 0.565, 0, 0.011211376, 0, -0.5648888, 200.15273, 121.72697, 63.875572)

@@ -6,6 +6,10 @@ extends SpotLight3D
 var hidden = true
 
 func _process(_delta):
+	if Global.flashlight_on == false:
+		spot_range = 0
+	elif Global.flashlight_on == true:
+		spot_range = 12.895
 	if hidden == true:
 		flashlight.hide()
 	if hidden == false:

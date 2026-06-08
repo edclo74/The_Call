@@ -18,4 +18,4 @@ func _on_main_menu_pressed() -> void:
 	pass
 
 func _on_quit_pressed() -> void:
-	pass
+	emit_signal("quit")

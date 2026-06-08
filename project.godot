@@ -11,9 +11,23 @@ config_version=5
 [application]
 
 config/name="The_Call"
-run/main_scene="res://character.tscn"
+run/main_scene="uid://cknkgc4f7w3h6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://be06jp1t1eel3"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[global_group]
+
+Pickup=""
+indoor_lighting=""
 
 [input]
 
