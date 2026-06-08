@@ -186,10 +186,11 @@ func _unhandled_input(event):
 func _process(delta):
 	hand.rotation.y = camera_x_rotation
 	if is_hiding:
-		if Input.is_action_just_pressed("ui_cancel"):
+		if Input.is_action_just_pressed("Use"):
 			var lockers = get_tree().get_nodes_in_group("Locker")
 			for l in lockers:
 				if l.player_ref == self:
+					flashlight.exit_locker()
 					l.exit(self)
 					break
 		return
@@ -219,6 +220,7 @@ func check_ray_hit():
 	if ray.is_colliding() and collider != null and collider.is_in_group("Locker"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
+			flashlight.enter_locker()
 			collider.enter(player)
 	else:
 		interaction_notifier.visible = false

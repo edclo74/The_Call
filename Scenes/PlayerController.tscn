@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vsk426dhulub" path="res://character_body_3d.gd" id="1_eplni"]
 [ext_resource type="Script" uid="uid://6bsvigauc3dq" path="res://Scenes/spot_light_3d.gd" id="2_crrsd"]
 [ext_resource type="PackedScene" uid="uid://d1m5agl1nhlaf" path="res://pause_menu.tscn" id="2_rrwoe"]
-[ext_resource type="Texture2D" uid="uid://5aqubr2fai8b" path="res://Sprite-0001-frame0.png" id="3_rrwoe"]
+[ext_resource type="Texture2D" uid="uid://bsyplpt1gen3b" path="res://Sprite-0001-frame0-2.png" id="3_rrwoe"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b052v"]
 

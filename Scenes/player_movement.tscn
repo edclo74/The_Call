@@ -29,8 +29,9 @@ glow_enabled = true
 [node name="Locker" parent="." unique_id=659803548 groups=["Locker"] instance=ExtResource("1_hjxs2")]
 transform = Transform3D(-0.0069862865, 0, -0.00043794917, 0, 0.007, 0, 0.00043794917, 0, -0.0069862865, 200.29381, 122.58651, 63.02895)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1867338001]
+[node name="flickering_light" type="SpotLight3D" parent="." unique_id=1867338001]
 transform = Transform3D(1, 0, 0, 0, 0.016684622, 0.9998608, 0, -0.9998608, 0.016684622, 191.85246, 135.09933, 58.73616)
+visible = false
 light_color = Color(1, 0.7647059, 0.09019608, 1)
 light_energy = 10.0
 spot_range = 22.067
@@ -52,7 +53,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.38818, 120.31681, 18.4219
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.49326, 118.76272, -47.79757)
 
 [node name="Batteries2" parent="." unique_id=1071088791 groups=["Batteries"] instance=ExtResource("5_jfama")]
-transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 190.3191, 119.34905, 55.426712)
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 190.3191, 119.94441, 55.426712)
 
 [node name="Anvil_Export_Temp" parent="." unique_id=128475273 instance=ExtResource("6_nntdv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.89685, 119.338135, 31.20084)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=885611657]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 191.63718, 136.19441, 57.677834)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 50.0
+spot_range = 19.309944
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="." unique_id=1522216143]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 205.58044, 130.17339, 58.19508)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="." unique_id=561213910]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 205.58044, 130.17339, 36.99361)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1658384327]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 191.63718, 136.19441, 46.43266)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 25.0
+spot_range = 19.309944
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=125840622]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 191.63718, 136.19441, 37.4776)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 2.0
+spot_range = 19.309944
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=1744524326]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 191.74113, 136.19441, 25.361567)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 3.0
+spot_range = 19.309944
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="." unique_id=1736261624]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 177.5874, 136.19441, 25.361567)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 6.75
+spot_range = 19.309944
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="." unique_id=1732185272]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 177.5874, 136.19441, 57.966198)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 50.0
+spot_range = 19.309944
