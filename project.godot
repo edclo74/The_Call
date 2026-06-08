@@ -26,8 +26,9 @@ window/size/viewport_height=1080
 
 [global_group]
 
-Pickup=""
 indoor_lighting=""
+Batteries=""
+Locker=""
 
 [input]
 

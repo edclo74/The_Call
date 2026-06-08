@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cduw6k1jytffx"]
 
+[ext_resource type="PackedScene" uid="uid://dat8rs1ts3c6e" path="res://Scenes/locker_scene.tscn" id="1_hjxs2"]
 [ext_resource type="Script" uid="uid://2fko3lie4jbw" path="res://Scenes/flickering_light.gd" id="1_jfama"]
 [ext_resource type="PackedScene" uid="uid://di7i10565cjnc" path="res://Scenes/PlayerController.tscn" id="1_yrei1"]
 [ext_resource type="PackedScene" uid="uid://6l3uof2boqkf" path="res://pickup.tscn" id="3_dfbmq"]
 [ext_resource type="PackedScene" uid="uid://i8qntkfjpisy" path="res://Scenes/Eddy is genuinely unintelligent 222.glb" id="4_5yw4k"]
 [ext_resource type="PackedScene" uid="uid://gx7gwuihk8we" path="res://batteries.tscn" id="5_jfama"]
 [ext_resource type="PackedScene" uid="uid://doalbd37ld0oh" path="res://Scenes/Eddy Sucks.glb" id="6_nntdv"]
-[ext_resource type="PackedScene" uid="uid://bddny4nd1k0hd" path="res://lockerthing.glb" id="7_hjxs2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +25,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=1982909402]
+
+[node name="Locker" parent="." unique_id=659803548 groups=["Locker"] instance=ExtResource("1_hjxs2")]
+transform = Transform3D(-0.0069862865, 0, -0.00043794917, 0, 0.007, 0, 0.00043794917, 0, -0.0069862865, 200.29381, 122.58651, 63.02895)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1867338001]
 transform = Transform3D(1, 0, 0, 0, 0.016684622, 0.9998608, 0, -0.9998608, 0.016684622, 191.85246, 135.09933, 58.73616)
@@ -48,11 +51,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.38818, 120.31681, 18.4219
 [node name="Anvil_Export_Temp2" parent="." unique_id=320980348 instance=ExtResource("4_5yw4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.49326, 118.76272, -47.79757)
 
-[node name="Batteries2" parent="." unique_id=1071088791 instance=ExtResource("5_jfama")]
+[node name="Batteries2" parent="." unique_id=1071088791 groups=["Batteries"] instance=ExtResource("5_jfama")]
 transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 190.3191, 119.34905, 55.426712)
 
 [node name="Anvil_Export_Temp" parent="." unique_id=128475273 instance=ExtResource("6_nntdv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.89685, 119.338135, 31.20084)
-
-[node name="Anvil_Export_Temp3" parent="." unique_id=669830339 instance=ExtResource("7_hjxs2")]
-transform = Transform3D(-0.5648888, 0, -0.011211376, 0, 0.565, 0, 0.011211376, 0, -0.5648888, 200.15273, 121.72697, 63.875572)

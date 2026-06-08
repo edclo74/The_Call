@@ -67,11 +67,18 @@ func unpause():
 func check_ray_hit():
 	var collider = ray.get_collider()
 	print(collider)
-	if ray.is_colliding() and collider != null and collider.is_in_group("Pickup"):
+	if ray.is_colliding() and collider != null and collider.is_in_group("Batteries"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			collider.queue_free()
 			Global.flashlight_on = true
+	else:
+		interaction_notifier.visible = false
+	if ray.is_colliding() and collider != null and collider.is_in_group("Locker"):
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			pass
+####ADD STUFF HERE YOU BASTARD######
 	else:
 		interaction_notifier.visible = false
 
