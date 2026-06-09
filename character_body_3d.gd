@@ -18,7 +18,10 @@ extends CharacterBody3D
 @onready var collection_tracker = $CanvasLayer/BoxContainer/CollectionTracker
 @onready var sprint_bar = $CanvasLayer/SprintBar
 @onready var locker = preload("res://Scenes/locker_scene.gd")
+@onready var flashlight_1 = $Hand/SpotLight3D
 @onready var hide_screen = $CanvasLayer/Hide
+@onready var fade_black = $CanvasLayer/ColorRect/fade_black
+@onready var flashlight_click = $flashlight_click
 # State
 var mouse_sensitivity: float = 0.002
 var menu_on: bool = false
@@ -28,6 +31,7 @@ var pages_collected: int = 0
 var current_stamina: float = 100.0
 var is_exhausted: bool = false
 var is_hiding: bool = false
+
 
 func _ready():
 	for light in get_tree().get_nodes_in_group("indoor_lighting"):
@@ -69,26 +73,33 @@ func _process(delta):
 			menu_instance.hide()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
 func unpause():
 	menu_instance.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func check_ray_hit():
 	var collider = ray.get_collider()
-	print(collider)
-	if ray.is_colliding() and collider != null and collider.is_in_group("Batteries"):
+	if not ray.is_colliding() or collider == null:
+		interaction_notifier.visible = false
+		return
+	if collider.is_in_group("Batteries"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			collider.queue_free()
 			Global.flashlight_on = true
-	else:
-		interaction_notifier.visible = false
-	if ray.is_colliding() and collider != null and collider.is_in_group("Locker"):
+			flashlight_1.update_flashlight()
+	elif collider.is_in_group("Locker"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
+			fade_black.stop()
+			fade_black.play("new_animation")
 			flashlight.enter_locker()
 			collider.enter(player)
+	elif collider.is_in_group("generator_int"):
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			for light in get_tree().get_nodes_in_group("indoor_lighting"):
+				light.visible = true
 	else:
 		interaction_notifier.visible = false
 
@@ -133,7 +144,6 @@ func _physics_process(delta):
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 	velocity = target_velocity
 	move_and_slide()
-
 
 func _on_pause_menu_quit() -> void:
 	get_tree().quit()

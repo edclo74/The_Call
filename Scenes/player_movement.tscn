@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6l3uof2boqkf" path="res://pickup.tscn" id="3_dfbmq"]
 [ext_resource type="PackedScene" uid="uid://gx7gwuihk8we" path="res://batteries.tscn" id="5_jfama"]
 [ext_resource type="PackedScene" uid="uid://doalbd37ld0oh" path="res://Scenes/Eddy Sucks.glb" id="6_nntdv"]
+[ext_resource type="PackedScene" uid="uid://dxjyb0a1h14oj" path="res://Scenes/generator_interact.tscn" id="7_hjxs2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.38818, 120.31681, 18.4219
 transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 190.3191, 119.94441, 55.426712)
 
 [node name="Anvil_Export_Temp" parent="." unique_id=128475273 instance=ExtResource("6_nntdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.8902, 119.25256, 31.123127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.85104, 119.25256, 31.130062)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=885611657 groups=["indoor_lighting"]]
 transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 191.63718, 136.19441, 57.677834)
@@ -100,3 +101,6 @@ transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.0
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 50.0
 spot_range = 19.309944
+
+[node name="Area3D" parent="." unique_id=974555 instance=ExtResource("7_hjxs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.37012, 121.975006, 52.39496)
