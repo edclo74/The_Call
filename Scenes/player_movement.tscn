@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.38818, 120.31681, 18.4219
 transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 190.3191, 119.94441, 55.426712)
 
 [node name="Anvil_Export_Temp" parent="." unique_id=128475273 instance=ExtResource("6_nntdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.89685, 119.338135, 31.20084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.8902, 119.25256, 31.123127)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=885611657 groups=["indoor_lighting"]]
 transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 191.63718, 136.19441, 57.677834)
