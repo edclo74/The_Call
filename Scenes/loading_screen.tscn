@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://nnvsot482sg2"]
+
+[ext_resource type="Script" uid="uid://cimucb4pptq6x" path="res://loading_screen.gd" id="1_oobaa"]
+
+[node name="Control" type="Control" unique_id=1988508475]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oobaa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=436072306]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=455056320]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=2051057946]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1037974250]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1808377525]
+layout_mode = 2
+text = "Loading"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1075854942]
+layout_mode = 2

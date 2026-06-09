@@ -89,4 +89,6 @@ script = ExtResource("2_crrsd")
 sprite_frames = SubResource("SpriteFrames_a8u7r")
 animation = &"new_animation"
 
+[connection signal="quit" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_quit"]
+
 [editable path="CanvasLayer/PauseMenu"]
