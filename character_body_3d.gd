@@ -15,7 +15,7 @@ extends CharacterBody3D
 @onready var menu_instance = %PauseMenu
 @onready var ray = %SeeCast
 @onready var interaction_notifier = $CanvasLayer/InteractionNotifier
-@onready var collection_tracker = $CanvasLayer/BoxContainer/CollectionTracker
+#@onready var collection_tracker = $CanvasLayer/BoxContainer/CollectionTracker
 @onready var sprint_bar = $CanvasLayer/SprintBar
 @onready var locker = preload("res://Scenes/locker_scene.gd")
 @onready var flashlight_1 = $Hand/SpotLight3D
@@ -31,6 +31,7 @@ var pages_collected: int = 0
 var current_stamina: float = 100.0
 var is_exhausted: bool = false
 var is_hiding: bool = false
+var just_entered_locker: bool = false
 
 
 func _ready():
@@ -56,7 +57,10 @@ func _unhandled_input(event):
 func _process(delta):
 	hand.rotation.y = camera_x_rotation
 	if is_hiding:
-		if Input.is_action_just_pressed("ui_cancel"):
+		if just_entered_locker:
+			just_entered_locker = false
+			return
+		if Input.is_action_just_pressed("Use"):
 			var lockers = get_tree().get_nodes_in_group("Locker")
 			for l in lockers:
 				if l.player_ref == self:
@@ -86,6 +90,7 @@ func check_ray_hit():
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			collider.queue_free()
+			flashlight.hidden = true
 			Global.flashlight_on = true
 			flashlight_1.update_flashlight()
 	elif collider.is_in_group("Locker"):
@@ -95,6 +100,7 @@ func check_ray_hit():
 			fade_black.play("new_animation")
 			flashlight.enter_locker()
 			collider.enter(player)
+			just_entered_locker = true
 	elif collider.is_in_group("generator_int"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):

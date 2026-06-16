@@ -19,7 +19,6 @@ func _ready():
 func update_flashlight():
 	if Global.flashlight_on:
 		flashlight_click.volume_db = 0
-		flashlight_click.play()
 		flashlight.visible = true
 		flashlight.light_energy = 1.0
 	else:
