@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://gx7gwuihk8we" path="res://Scenes/batteries.tscn" id="5_jfama"]
 [ext_resource type="PackedScene" uid="uid://dxjyb0a1h14oj" path="res://Scenes/generator_interact.tscn" id="7_hjxs2"]
 [ext_resource type="PackedScene" uid="uid://b27slf3hv1w2x" path="res://Ed Suckx.glb" id="8_shqwv"]
+[ext_resource type="PackedScene" uid="uid://dq1jgkcyqpvvx" path="res://textures/TheCall eddds.glb" id="8_sm880"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,7 +43,7 @@ script = ExtResource("1_jfama")
 environment = SubResource("Environment_dfbmq")
 
 [node name="CharacterBody3D" parent="." unique_id=1351378724 instance=ExtResource("1_yrei1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.4015, 142.20009, -35.12477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.4015, 143.10541, -30.193691)
 
 [node name="Pickup" parent="." unique_id=458297649 instance=ExtResource("3_dfbmq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 241.031, 141.1125, -48.824707)
@@ -115,3 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.27711, 144.92723, -4.2159
 
 [node name="Ed Suckx" parent="." unique_id=864693558 instance=ExtResource("8_shqwv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.3852, 140.25371, -25.135056)
+
+[node name="Anvil_Export_Temp" parent="." unique_id=1721481746 instance=ExtResource("8_sm880")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.35736, 204.03748, -18.53994)
