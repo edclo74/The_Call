@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://6l3uof2boqkf" path="res://pickup.tscn" id="3_dfbmq"]
 [ext_resource type="PackedScene" uid="uid://gx7gwuihk8we" path="res://Scenes/batteries.tscn" id="5_jfama"]
 [ext_resource type="PackedScene" uid="uid://dxjyb0a1h14oj" path="res://Scenes/generator_interact.tscn" id="7_hjxs2"]
-[ext_resource type="PackedScene" uid="uid://b27slf3hv1w2x" path="res://Ed Suckx.glb" id="8_shqwv"]
+[ext_resource type="PackedScene" uid="uid://deuqhkuf55os4" path="res://TheCall_EDD_IS_BEING_PAINFUL.glb" id="8_shqwv"]
 [ext_resource type="PackedScene" uid="uid://dq1jgkcyqpvvx" path="res://textures/TheCall eddds.glb" id="8_sm880"]
+[ext_resource type="PackedScene" uid="uid://iapprqv1fneq" path="res://ED_IS_GOOD_AT_SERVERS.glb" id="9_sm880"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,10 +29,10 @@ glow_enabled = true
 [node name="Node3D" type="Node3D" unique_id=1982909402]
 
 [node name="Locker" parent="." unique_id=659803548 groups=["Locker"] instance=ExtResource("1_hjxs2")]
-transform = Transform3D(-0.0069862865, 0, -0.00043794917, 0, 0.007, 0, 0.00043794917, 0, -0.0069862865, 270.70798, 143.38219, 6.74687)
+transform = Transform3D(-0.0069862865, 0, -0.00043794917, 0, 0.007, 0, 0.00043794917, 0, -0.0069862865, 178.06042, 142.03473, 5.3525925)
 
 [node name="flickering_light" type="SpotLight3D" parent="." unique_id=1867338001]
-transform = Transform3D(1, 0, 0, 0, 0.016684622, 0.9998608, 0, -0.9998608, 0.016684622, 262.26663, 155.89502, 2.4540806)
+transform = Transform3D(1, 0, 0, 0, 0.016684622, 0.9998608, 0, -0.9998608, 0.016684622, 169.61908, 154.54756, 1.059803)
 light_color = Color(1, 0.7647059, 0.09019608, 1)
 light_energy = 10.0
 spot_range = 22.067
@@ -43,79 +44,82 @@ script = ExtResource("1_jfama")
 environment = SubResource("Environment_dfbmq")
 
 [node name="CharacterBody3D" parent="." unique_id=1351378724 instance=ExtResource("1_yrei1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.4015, 143.10541, -30.193691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167.75394, 141.75795, -31.587969)
 
 [node name="Pickup" parent="." unique_id=458297649 instance=ExtResource("3_dfbmq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 241.031, 141.1125, -48.824707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.38345, 139.76505, -50.218987)
 
 [node name="Pickup2" parent="." unique_id=1724841091 instance=ExtResource("3_dfbmq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.80235, 141.1125, -37.860092)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.1548, 139.76505, -39.25437)
 
 [node name="Batteries2" parent="." unique_id=1071088791 groups=["Batteries"] instance=ExtResource("5_jfama")]
-transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 260.73328, 140.7401, -0.85536766)
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 168.08572, 139.39264, -2.2496452)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=885611657 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 262.05133, 156.9901, 1.3957539)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 169.40378, 155.64264, 0.0014762878)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 50.0
 spot_range = 19.309944
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="." unique_id=1522216143 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 275.99463, 150.96907, 1.9130001)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 183.34708, 149.62161, 0.51872253)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 12.5
 spot_range = 19.309944
 
 [node name="SpotLight3D9" type="SpotLight3D" parent="." unique_id=2061971382 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 234.12143, 150.96907, 1.9449863)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 141.47388, 149.62161, 0.5507088)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 12.5
 spot_range = 17.555498
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="." unique_id=561213910 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 275.99463, 150.96907, -19.28847)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 183.34708, 149.62161, -20.682747)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 12.5
 spot_range = 19.309944
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1658384327 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 262.05133, 156.9901, -9.849421)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 169.40378, 155.64264, -11.243698)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 25.0
 spot_range = 19.309944
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=125840622 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 262.05133, 156.9901, -18.80448)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 169.40378, 155.64264, -20.198757)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 2.0
 spot_range = 19.309944
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=1744524326 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 262.1553, 156.9901, -30.920515)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 169.50775, 155.64264, -32.314793)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 3.0
 spot_range = 19.309944
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="." unique_id=1736261624 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 248.00157, 156.9901, -30.920515)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 155.35402, 155.64264, -32.314793)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 6.75
 spot_range = 19.309944
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="." unique_id=1732185272 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 248.00157, 156.9901, 1.6841183)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 155.35402, 155.64264, 0.2898407)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 50.0
 spot_range = 19.309944
 
 [node name="Area3D" parent="." unique_id=974555 instance=ExtResource("7_hjxs2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.78429, 142.77069, -3.8871212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.136734, 141.42323, -5.281399)
 
 [node name="generator" type="AudioStreamPlayer3D" parent="." unique_id=813698760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.27711, 144.92723, -4.215975)
-
-[node name="Ed Suckx" parent="." unique_id=864693558 instance=ExtResource("8_shqwv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.3852, 140.25371, -25.135056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.62956, 143.57977, -5.6102524)
 
 [node name="Anvil_Export_Temp" parent="." unique_id=1721481746 instance=ExtResource("8_sm880")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.35736, 204.03748, -18.53994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.6399, 204.03748, -18.53994)
+
+[node name="Anvil_Export_Temp2" parent="." unique_id=1779914615 instance=ExtResource("8_shqwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.33206, 138.77077, -26.214424)
+
+[node name="ED_IS_GOOD_AT_SERVERS" parent="." unique_id=1478852916 instance=ExtResource("9_sm880")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.26555, 154.31519, -26.527916)
