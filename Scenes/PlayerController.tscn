@@ -60,7 +60,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="CharacterBody3D" unique_id=1351378724]
+[node name="player" type="CharacterBody3D" unique_id=1351378724 groups=["player"]]
 script = ExtResource("1_eplni")
 max_stamina = 200.0
 
