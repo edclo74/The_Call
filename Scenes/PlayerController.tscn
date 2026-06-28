@@ -61,10 +61,15 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody3D" unique_id=1351378724 groups=["player"]]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_eplni")
 max_stamina = 200.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=506792744]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=234391712 instance=ExtResource("2_rrwoe")]
+unique_name_in_owner = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2027474402]
 anchors_preset = 15
@@ -77,9 +82,6 @@ color = Color(0, 0, 0, 0)
 
 [node name="fade_black" type="AnimationPlayer" parent="CanvasLayer/ColorRect" unique_id=1734555333]
 libraries/ = SubResource("AnimationLibrary_4lww5")
-
-[node name="PauseMenu" parent="CanvasLayer" unique_id=234391712 instance=ExtResource("2_rrwoe")]
-unique_name_in_owner = true
 
 [node name="InteractionNotifier" type="Label" parent="CanvasLayer" unique_id=1568933120]
 modulate = Color(0.99607843, 0.18039216, 0.07058824, 1)
