@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmefvyw2gq1dx"]
+
+[resource]
+resource_name = "Red Generator"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.5442949, 0.31893483, 0.3294226, 1)
+metallic = 1.0
+roughness = 0.8448276

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ju48sa05en5p"]
+
+[resource]
+resource_name = "Black Boxes on Generator"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.09493003, 0.09493003, 0.09493003, 1)
+metallic = 0.22988504
+roughness = 0.66091955

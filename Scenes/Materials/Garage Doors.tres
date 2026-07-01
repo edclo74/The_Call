@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du73bl130ylks"]
+
+[ext_resource type="Texture2D" uid="uid://biup1n71ue5d3" path="res://Scenes/Eddy y y y yTheCall_ind_st1_grey2.png" id="1_1ise2"]
+
+[resource]
+resource_name = "Garage Doors"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1ise2")
+metallic = 0.74184954
+roughness = 0.9545455
+metadata/_gltf_primary_texture_coord = 0

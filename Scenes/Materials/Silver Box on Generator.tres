@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsl62sskr0qlq"]
+
+[resource]
+resource_name = "Silver Box on Generator"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.5569574, 0.5569574, 0.5569574, 1)
+metallic = 0.70689654
+roughness = 0.5574713

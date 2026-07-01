@@ -27,6 +27,7 @@ extends CharacterBody3D
 @onready var hide_screen = $CanvasLayer/Hide
 @onready var fade_black = $CanvasLayer/ColorRect/fade_black
 @onready var flashlight_click = $flashlight_click
+@onready var animation_player = $"../AnimationPlayer"
 
 # State
 var mouse_sensitivity: float = 0.002
@@ -130,6 +131,7 @@ func check_ray_hit():
 	elif collider.is_in_group("generator_int"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
+			animation_player.play("animation")
 			for light in get_tree().get_nodes_in_group("indoor_lighting"):
 				light.visible = true
 	else:

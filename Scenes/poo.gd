@@ -4,4 +4,4 @@ extends Control
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/player_movement.tscn")
+	SceneManager.load_level("res://Scenes/player_movement.tscn")

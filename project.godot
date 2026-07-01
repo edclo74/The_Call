@@ -22,6 +22,7 @@ import/import_plugin/default_automatic_importer="SpriteFrames"
 [autoload]
 
 Global="*uid://be06jp1t1eel3"
+SceneManager="*uid://bil7ve40kxtbd"
 
 [display]
 

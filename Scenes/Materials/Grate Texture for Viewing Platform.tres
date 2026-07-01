@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1xhdr3215hnv"]
+
+[ext_resource type="Texture2D" uid="uid://ccu0ff74cop4x" path="res://Scenes/Eddy y y y yTheCall_Grate.png" id="1_yk7su"]
+
+[resource]
+resource_name = "Grate Texture for Viewing Platform"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_yk7su")
+metallic = 0.7909091
+roughness = 0.8454546
+metadata/_gltf_primary_texture_coord = 0

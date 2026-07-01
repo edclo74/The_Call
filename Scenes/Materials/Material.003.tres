@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfpjbwqcx3710"]
+
+[ext_resource type="Texture2D" uid="uid://cv4ycyfsdreob" path="res://Scenes/Eddy y y y yTheCall_doge.jpg" id="1_evp5c"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_texture = ExtResource("1_evp5c")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

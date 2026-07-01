@@ -39,7 +39,175 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Also Wood For Table": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Also Wood For Table.tres",
+"use_external/path": "uid://b5ax8wnyeo2lq"
+},
+"Back Trim For Table": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Back Trim For Table.tres",
+"use_external/path": "uid://sg1kjvjpkqc2"
+},
+"Ballistraid": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Ballistraid.tres",
+"use_external/path": "uid://c47bnaqa0mprs"
+},
+"Black Boxes on Generator": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Black Boxes on Generator.tres",
+"use_external/path": "uid://ju48sa05en5p"
+},
+"Doors for the Warehouse": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Doors for the Warehouse.tres",
+"use_external/path": "uid://bsceyhamebw0k"
+},
+"Garage Doors": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Garage Doors.tres",
+"use_external/path": "uid://du73bl130ylks"
+},
+"Grate Texture for Viewing Platform": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Grate Texture for Viewing Platform.tres",
+"use_external/path": "uid://b1xhdr3215hnv"
+},
+"Green Genertor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Green Genertor.tres",
+"use_external/path": "uid://cqdxl2qtektbf"
+},
+"IMG_Grate.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_Grate.png.tres",
+"use_external/path": "uid://bfdk0pwnq2u1b"
+},
+"IMG_beans.jpg": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_beans.jpg.tres",
+"use_external/path": "uid://b2d71q3vw16s2"
+},
+"IMG_carpet texture.jpg": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_carpet texture.jpg.tres",
+"use_external/path": "uid://comb3xfefbsqs"
+},
+"IMG_ind_ac01_grn4.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_ind_ac01_grn4.png.tres",
+"use_external/path": "uid://cg35mhqnn3o76"
+},
+"IMG_ind_w01_grey2.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_ind_w01_grey2.png.tres",
+"use_external/path": "uid://vpq766o2sn42"
+},
+"IMG_ind_w02_grey2 - Copy.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_ind_w02_grey2 - Copy.png.tres",
+"use_external/path": "uid://vjrxo68r1fg7"
+},
+"IMG_ind_w02_grey2.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_ind_w02_grey2.png.tres",
+"use_external/path": "uid://blxalfdunq3rv"
+},
+"IMG_wood.jpg": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/IMG_wood.jpg.tres",
+"use_external/path": "uid://bpn7nuvi8s1d4"
+},
+"Light Bulb Emission": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Light Bulb Emission.tres",
+"use_external/path": "uid://ndvjuptjopcn"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.001.tres",
+"use_external/path": "uid://ddvahtt6w11w2"
+},
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.003.tres",
+"use_external/path": "uid://bfpjbwqcx3710"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.004.tres",
+"use_external/path": "uid://byack8g6vrmhw"
+},
+"Material.005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.005.tres",
+"use_external/path": "uid://c2vqohpumr4wp"
+},
+"Material.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.006.tres",
+"use_external/path": "uid://c7aaikhl58s71"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.007.tres",
+"use_external/path": "uid://4hu3rbinya1l"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Material.008.tres",
+"use_external/path": "uid://csp22w7rwa06k"
+},
+"Pipe Extenders for Generator": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Pipe Extenders for Generator.tres",
+"use_external/path": "uid://ce37rms4d1fi5"
+},
+"Red Generator": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Red Generator.tres",
+"use_external/path": "uid://dmefvyw2gq1dx"
+},
+"Roof for Warehouse": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Roof for Warehouse.tres",
+"use_external/path": "uid://ry616sobpb16"
+},
+"Shelving Unit Flat": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Shelving Unit Flat.tres",
+"use_external/path": "uid://cnlx2c646gj2v"
+},
+"Silver Box on Generator": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Silver Box on Generator.tres",
+"use_external/path": "uid://dsl62sskr0qlq"
+},
+"Silver for Light and piping for Generator": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Silver for Light and piping for Generator.tres",
+"use_external/path": "uid://dc410kgkhu6ec"
+},
+"Walls and Floor for Warehouse": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Walls and Floor for Warehouse.tres",
+"use_external/path": "uid://d11187slg3smb"
+},
+"Windows for Warehouse": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Windows for Warehouse.tres",
+"use_external/path": "uid://b0tidae6tg0ph"
+},
+"Wood for Table": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Scenes/Materials/Wood for Table.tres",
+"use_external/path": "uid://d3an5eqeljowb"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

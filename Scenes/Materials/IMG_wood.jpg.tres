@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bpn7nuvi8s1d4"]
+
+[ext_resource type="Texture2D" uid="uid://cs3dm5pwavhef" path="res://Scenes/Eddy y y y yTheCall_wood.jpg" id="1_tmtil"]
+
+[resource]
+resource_name = "IMG_wood.jpg"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_tmtil")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

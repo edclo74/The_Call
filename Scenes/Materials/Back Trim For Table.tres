@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sg1kjvjpkqc2"]
+
+[resource]
+resource_name = "Back Trim For Table"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.05062381, 0.05062381, 0.05062381, 1)
+roughness = 0.41954

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d11187slg3smb"]
+
+[ext_resource type="Texture2D" uid="uid://bshjwer4ihpwo" path="res://Scenes/Eddy y y y yTheCall_ind_w02_grey2.png" id="1_f5ay5"]
+
+[resource]
+resource_name = "Walls and Floor for Warehouse"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_f5ay5")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

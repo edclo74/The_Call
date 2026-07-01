@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfdk0pwnq2u1b"]
+
+[ext_resource type="Texture2D" uid="uid://ccu0ff74cop4x" path="res://Scenes/Eddy y y y yTheCall_Grate.png" id="1_gqttl"]
+
+[resource]
+resource_name = "IMG_Grate.png"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gqttl")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
