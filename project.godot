@@ -23,6 +23,7 @@ import/import_plugin/default_automatic_importer="SpriteFrames"
 
 Global="*uid://be06jp1t1eel3"
 SceneManager="*uid://bil7ve40kxtbd"
+Objectives="*uid://qq1adaq2klxe"
 
 [display]
 

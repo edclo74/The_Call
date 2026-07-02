@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://6bsvigauc3dq" path="res://Scenes/spot_light_3d.gd" id="2_crrsd"]
 [ext_resource type="PackedScene" uid="uid://d1m5agl1nhlaf" path="res://pause_menu.tscn" id="2_rrwoe"]
 [ext_resource type="Texture2D" uid="uid://bsyplpt1gen3b" path="res://Sprite-0001-frame0-2.png" id="3_rrwoe"]
+[ext_resource type="PackedScene" uid="uid://cotsucos5olwl" path="res://Scenes/players_hand222.glb" id="4_4lww5"]
 [ext_resource type="AudioStream" uid="uid://b2ev35ll474le" path="res://Audio/flashlight_click.mp3" id="5_a8u7r"]
 
 [sub_resource type="Animation" id="Animation_rrwoe"]
@@ -112,6 +113,7 @@ offset_bottom = 40.0
 texture = ExtResource("3_rrwoe")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=218754376]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -127,7 +129,7 @@ theme_override_font_sizes/font_size = 60
 text = "Press X To Exit"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=634130509]
-transform = Transform3D(-0.99999356, 0, -0.0035995487, 0, 1, 0, 0.0035995487, 0, -0.99999356, 0, 1.276, 0)
+transform = Transform3D(-0.9999935, 0, -0.0035995487, 0, 1, 0, 0.0035995487, 0, -0.9999935, 0, 1.276, 0)
 
 [node name="SeeCast" type="RayCast3D" parent="Camera3D" unique_id=838013699]
 unique_name_in_owner = true
@@ -135,6 +137,9 @@ transform = Transform3D(-0.99999976, 0, -0.00056364294, 0, 1, 0, 0.00047311536, 
 target_position = Vector3(0, 0, 1.775)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="players_hand222" parent="Camera3D" unique_id=555003281 instance=ExtResource("4_4lww5")]
+transform = Transform3D(-0.99999344, 0, 0.0035995487, 0, 1, 0, -0.0035995485, 0, -0.99999344, 1.2581086, -2.8913565, 0.3438863)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1920706158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
