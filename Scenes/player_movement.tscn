@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cduw6k1jytffx"]
 
+[ext_resource type="Script" uid="uid://bb45x5txh6af" path="res://Scenes/Level_script.gd" id="1_688ye"]
 [ext_resource type="PackedScene" uid="uid://dat8rs1ts3c6e" path="res://Scenes/locker_scene.tscn" id="1_hjxs2"]
 [ext_resource type="Script" uid="uid://2fko3lie4jbw" path="res://Scenes/flickering_light.gd" id="1_jfama"]
 [ext_resource type="PackedScene" uid="uid://di7i10565cjnc" path="res://Scenes/PlayerController.tscn" id="1_yrei1"]
@@ -3004,7 +3005,10 @@ _data = {
 &"animation": SubResource("Animation_ekgf0")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ppm4i"]
+
 [node name="Node3D" type="Node3D" unique_id=1982909402]
+script = ExtResource("1_688ye")
 
 [node name="Locker" parent="." unique_id=659803548 groups=["Locker"] instance=ExtResource("1_hjxs2")]
 transform = Transform3D(-0.0069862865, 0, -0.00043794917, 0, 0.007, 0, 0.00043794917, 0, -0.0069862865, 17.004265, 3.4467506, 31.380173)
@@ -3092,7 +3096,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.6399, 204.03748, -18.5399
 visible = false
 
 [node name="CharacterBody3D2" parent="." unique_id=2011433988 instance=ExtResource("9_xbss4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.813828, 1.5754304, -5.1402426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.813828, 2.1550503, -5.1402426)
 
 [node name="ED_IS_GOOD_AT_SERVERS2" parent="." unique_id=1194940650 instance=ExtResource("8_cyrle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 105.69727, 0)
@@ -3476,7 +3480,7 @@ transform = Transform3D(0, 1.6, 0, -9.536743e-08, -5.684342e-15, -1.6, -1.6, 0, 
 mesh = SubResource("ArrayMesh_kl7q6")
 
 [node name="KeyCard" type="MeshInstance3D" parent="NavigationRegion3D/Eddy y y y yTheCall" unique_id=1105220193]
-transform = Transform3D(0.115926646, 0, 0, 0, -0.0061506983, 0, 0, 0, 0.17345062, -35.501236, 2.2928784, 3.5903044)
+transform = Transform3D(0.115926646, 0, 0, 0, -0.0061506983, 0, 0, 0, 0.17345062, -35.501236, 2.2928784, 3.5538416)
 mesh = SubResource("ArrayMesh_jekfc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Eddy y y y yTheCall/KeyCard" unique_id=1008736842]
@@ -3510,3 +3514,13 @@ mesh = SubResource("ArrayMesh_uvpuc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=264963956]
 libraries/ = SubResource("AnimationLibrary_3g0g3")
+
+[node name="obj2_checkpoint" type="Area3D" parent="." unique_id=626611033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.333902, 1.5571554, 20.905497)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="obj2_checkpoint" unique_id=390862642]
+transform = Transform3D(2.1328888, 0, 0, 0, 1, 0, 0, 0, 2.649085, 0.5582657, 0, 0)
+shape = SubResource("BoxShape3D_ppm4i")
+
+[connection signal="body_entered" from="obj2_checkpoint" to="." method="_on_obj_2_checkpoint_body_entered"]

@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://6bsvigauc3dq" path="res://Scenes/spot_light_3d.gd" id="2_crrsd"]
 [ext_resource type="PackedScene" uid="uid://d1m5agl1nhlaf" path="res://pause_menu.tscn" id="2_rrwoe"]
 [ext_resource type="Texture2D" uid="uid://bsyplpt1gen3b" path="res://Sprite-0001-frame0-2.png" id="3_rrwoe"]
+[ext_resource type="FontFile" uid="uid://y34i38w165re" path="res://Scenes/LibertinusMath-Regular.ttf" id="3_s1vvi"]
+[ext_resource type="Script" uid="uid://b0wjenqxaaibw" path="res://Scenes/current_objective.gd" id="4_e25u2"]
 [ext_resource type="Texture2D" uid="uid://dpqctbb1g5br" path="res://Scenes/players_hand222_police_Top_diffuse.png" id="4_n0rdu"]
 [ext_resource type="AudioStream" uid="uid://b2ev35ll474le" path="res://Audio/flashlight_click.mp3" id="5_a8u7r"]
 [ext_resource type="Texture2D" uid="uid://ddpl4yeqndvp1" path="res://Scenes/players_hand222_police_Body_diffuse.png" id="5_e25u2"]
@@ -242,6 +244,18 @@ max_stamina = 200.0
 [node name="PauseMenu" parent="CanvasLayer" unique_id=234391712 instance=ExtResource("2_rrwoe")]
 unique_name_in_owner = true
 
+[node name="resume" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="0" unique_id=1173198314]
+theme_override_fonts/font = ExtResource("3_s1vvi")
+
+[node name="options" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="1" unique_id=1024814017]
+theme_override_fonts/font = ExtResource("3_s1vvi")
+
+[node name="main_menu" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="2" unique_id=1516160757]
+theme_override_fonts/font = ExtResource("3_s1vvi")
+
+[node name="quit" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="3" unique_id=413096846]
+theme_override_fonts/font = ExtResource("3_s1vvi")
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2027474402]
 anchors_preset = 15
 anchor_right = 1.0
@@ -267,6 +281,7 @@ offset_right = 96.0
 offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_s1vvi")
 theme_override_font_sizes/font_size = 57
 text = "Press E To Collect"
 
@@ -295,8 +310,17 @@ offset_right = 251.0
 offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_s1vvi")
 theme_override_font_sizes/font_size = 60
 text = "Press X To Exit"
+
+[node name="current_objective" type="Label" parent="CanvasLayer" unique_id=1057924606]
+offset_left = 1716.0
+offset_top = 12.0
+offset_right = 1913.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("3_s1vvi")
+script = ExtResource("4_e25u2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=634130509]
 transform = Transform3D(-0.9999935, 0, -0.0035995487, 0, 1, 0, 0.0035995487, 0, -0.9999935, 0, 1.276, 0)
@@ -314,7 +338,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="players_hand222" type="Node3D" parent="Camera3D" unique_id=555003281]
-transform = Transform3D(-0.99999344, 0, 0.0035995487, 0, 1, 0, -0.0035995485, 0, -0.99999344, 1.2581086, -2.8913565, 0.3438863)
+transform = Transform3D(-0.9999934, 0, 0.0035995482, 0, 1, 0, -0.003599548, 0, -0.9999934, 1.2581086, -2.8913565, 0.3438863)
 
 [node name="Armature_001" type="Node3D" parent="Camera3D/players_hand222" unique_id=1115611990]
 transform = Transform3D(1.6292058, 0, 0, 0, 0, -1.6292058, 0, 1.6292058, 0, 1.082705, 0.5733807, 0.45289516)

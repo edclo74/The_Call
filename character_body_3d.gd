@@ -112,7 +112,8 @@ func check_ray_hit():
 		return
 	if collider.is_in_group("Batteries"):
 		interaction_notifier.visible = true
-		if Input.is_action_just_pressed("Use"):
+		if Input.is_action_just_pressed("Use") and ObjectiveManager.get_current_objective().get("id") == "obj_1":
+			ObjectiveManager.complete_current_objective()
 			collider.queue_free()
 			flashlight.hidden = true
 			Global.flashlight_on = true

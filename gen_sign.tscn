@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://y5luk7sy5m26"]
+
+[ext_resource type="PackedScene" uid="uid://c8f4ueg6b5gfv" path="res://Scenes/gen_sign.glb" id="1_3v2m2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cj7hj"]
+size = Vector3(2.00001, 2, 2)
+
+[node name="gen_sign" unique_id=1742237315 instance=ExtResource("1_3v2m2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=810344814]
+transform = Transform3D(0.06977834, 0, 0, 0, 1, 0, 0, 0, -1.545629, 3.493655e-07, 0, 0)
+shape = SubResource("BoxShape3D_cj7hj")
