@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://di7i10565cjnc" path="res://Scenes/PlayerController.tscn" id="1_yrei1"]
 [ext_resource type="PackedScene" uid="uid://gx7gwuihk8we" path="res://Scenes/batteries.tscn" id="5_jfama"]
 [ext_resource type="PackedScene" uid="uid://dxjyb0a1h14oj" path="res://Scenes/generator_interact.tscn" id="7_hjxs2"]
-[ext_resource type="PackedScene" uid="uid://cj0s5cmhq2axc" path="res://Scenes/map.tscn" id="8_cyrle"]
 [ext_resource type="PackedScene" uid="uid://dq1jgkcyqpvvx" path="res://textures/TheCall eddds.glb" id="8_sm880"]
 [ext_resource type="PackedScene" uid="uid://bgynp87e4wi0j" path="res://Scenes/enemy.tscn" id="9_xbss4"]
 [ext_resource type="Material" uid="uid://ry616sobpb16" path="res://Scenes/Materials/Roof for Warehouse.tres" id="10_688ye"]
@@ -42,6 +41,7 @@
 [ext_resource type="Material" uid="uid://c7aaikhl58s71" path="res://Scenes/Materials/Material.006.tres" id="40_dwpxk"]
 [ext_resource type="Material" uid="uid://4hu3rbinya1l" path="res://Scenes/Materials/Material.007.tres" id="41_rtutq"]
 [ext_resource type="Material" uid="uid://csp22w7rwa06k" path="res://Scenes/Materials/Material.008.tres" id="42_6ewd1"]
+[ext_resource type="PackedScene" uid="uid://biwsjytsot2lj" path="res://Scenes/EDD LOVES NEW VRSIONS.glb" id="42_688ye"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yrei1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -3098,9 +3098,6 @@ visible = false
 [node name="CharacterBody3D2" parent="." unique_id=2011433988 instance=ExtResource("9_xbss4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.813828, 2.1550503, -5.1402426)
 
-[node name="ED_IS_GOOD_AT_SERVERS2" parent="." unique_id=1194940650 instance=ExtResource("8_cyrle")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 105.69727, 0)
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=486424195]
 navigation_mesh = SubResource("NavigationMesh_ppm4i")
 
@@ -3522,5 +3519,8 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="obj2_checkpoint" unique_id=390862642]
 transform = Transform3D(2.1328888, 0, 0, 0, 1, 0, 0, 0, 2.649085, 0.5582657, 0, 0)
 shape = SubResource("BoxShape3D_ppm4i")
+
+[node name="EDD LOVES NEW VRSIONS" parent="." unique_id=1099804757 instance=ExtResource("42_688ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14844573, 37.064754, 96.51548)
 
 [connection signal="body_entered" from="obj2_checkpoint" to="." method="_on_obj_2_checkpoint_body_entered"]
