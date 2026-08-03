@@ -1,10 +1,12 @@
 extends SpotLight3D
+
 # Drag your Camera3D node here
 @onready var camera = $"../../Camera3D"
 @onready var flashlight = $"."
 @onready var player = $"../../"
 @onready var flashlight_model = $"../../Camera3D/players_hand222/Sketchfab_model/71578a57ec3f432aae1c5cfd4c8cb237_obj_cleaner_materialmerger_gles/Node3D"
 @onready var flashlight_click = $"../../flashlight_click"
+
 var hidden = true
 
 func enter_locker():
@@ -17,7 +19,7 @@ func _ready():
 	update_flashlight()
 
 func update_flashlight():
-	if Global.flashlight_on:
+	if BatteryScript.flashlight_on:
 		flashlight_click.volume_db = 0
 		flashlight.visible = true
 		flashlight.light_energy = 2.0
@@ -25,16 +27,30 @@ func update_flashlight():
 		flashlight_click.volume_db = -80
 		flashlight.visible = false
 		flashlight.light_energy = 0.0
-##FIX THIS GARBAGE HOLY I SUCK AT CODING
+
 func _process(_delta):
-	if hidden == true:
-		flashlight.hide()
-	if hidden == false:
-		flashlight.show()
+	# Handle toggle input
 	if Input.is_action_just_pressed("flashlight") and not player.is_hiding:
-		flashlight_click.play()
-		hidden = !hidden
-	
+		if hidden and BatteryScript.battery_current_charge <= 0.0:
+			# Battery dead, don't allow turning on
+			pass
+		else:
+			flashlight_click.play()
+			hidden = !hidden
+			BatteryScript.flashlight_on = not hidden
+
+	# Show/hide based on state
+	if hidden:
+		flashlight.hide()
+	else:
+		flashlight.show()
+		# Drain battery only while flashlight is actually on
+		BatteryScript.battery_drain(_delta)
+		if BatteryScript.battery_current_charge <= 0.0:
+			hidden = true
+			BatteryScript.flashlight_on = false
+			flashlight.hide()
+
 	if camera:
 		# Make the flashlight look in the same direction as the camera
 		global_transform.basis = camera.global_transform.basis

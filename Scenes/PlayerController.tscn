@@ -9,6 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://dpqctbb1g5br" path="res://Scenes/players_hand222_police_Top_diffuse.png" id="4_n0rdu"]
 [ext_resource type="AudioStream" uid="uid://b2ev35ll474le" path="res://Audio/flashlight_click.mp3" id="5_a8u7r"]
 [ext_resource type="Texture2D" uid="uid://ddpl4yeqndvp1" path="res://Scenes/players_hand222_police_Body_diffuse.png" id="5_e25u2"]
+[ext_resource type="Texture2D" uid="uid://6mvtswxxmh28" path="res://Scenes/battery_1-removebg-preview.png" id="6_wgk3e"]
+[ext_resource type="Texture2D" uid="uid://bjvb2ng8tfa8i" path="res://Scenes/battery_2-removebg-preview.png" id="7_86gd5"]
+[ext_resource type="Texture2D" uid="uid://cenukqlaj30nl" path="res://Scenes/battery_3-removebg-preview.png" id="8_4akmf"]
+[ext_resource type="Texture2D" uid="uid://dc5wlgo2eroin" path="res://Scenes/battery_4-removebg-preview.png" id="9_1inkg"]
+[ext_resource type="Script" uid="uid://bvq0lgygtfput" path="res://Scenes/battery_indicator.gd" id="10_86gd5"]
+[ext_resource type="Script" uid="uid://cukjbxa5fbha0" path="res://Scenes/battery_script.gd" id="14_pno4h"]
 
 [sub_resource type="Animation" id="Animation_rrwoe"]
 length = 0.001
@@ -46,6 +52,26 @@ _data = {
 &"RESET": SubResource("Animation_rrwoe"),
 &"new_animation": SubResource("Animation_a8u7r")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1inkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4akmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_86gd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wgk3e")
+}],
+"loop": 1,
+"name": &"battery_levels",
+"speed": 5.0
+}]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2ap8"]
 resource_name = "Top"
@@ -322,6 +348,15 @@ offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("3_s1vvi")
 script = ExtResource("4_e25u2")
 
+[node name="Battery_indicator" type="AnimatedSprite2D" parent="." unique_id=464008800]
+position = Vector2(69, 75)
+scale = Vector2(0.4041916, 0.37148595)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"battery_levels"
+frame = 2
+frame_progress = 0.92111814
+script = ExtResource("10_86gd5")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=634130509]
 transform = Transform3D(-0.9999935, 0, -0.0035995487, 0, 1, 0, 0.0035995487, 0, -0.9999935, 0, 1.276, 0)
 
@@ -554,6 +589,9 @@ animation = &"new_animation"
 
 [node name="flashlight_click" type="AudioStreamPlayer2D" parent="." unique_id=1835999622]
 stream = ExtResource("5_a8u7r")
+
+[node name="Battery" type="Node" parent="." unique_id=1065960111]
+script = ExtResource("14_pno4h")
 
 [connection signal="main_menu" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_main_menu"]
 [connection signal="quit" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_quit"]

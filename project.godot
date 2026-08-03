@@ -24,6 +24,8 @@ import/import_plugin/default_automatic_importer="SpriteFrames"
 Global="*uid://be06jp1t1eel3"
 SceneManager="*uid://bil7ve40kxtbd"
 ObjectiveManager="*uid://bkan4e7wxgvhg"
+Settings="*uid://c7bt1f6dk2e4i"
+BatteryScript="*uid://cukjbxa5fbha0"
 
 [display]
 
@@ -34,7 +36,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [global_group]
 

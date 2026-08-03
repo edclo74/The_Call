@@ -2,6 +2,8 @@
 
 [ext_resource type="VideoStream" uid="uid://dhr0yyw1hjtag" path="res://Scenes/video_done (1).ogv" id="1_1qmx1"]
 [ext_resource type="Script" uid="uid://cn2i5a0tfxu2p" path="res://Scenes/poo.gd" id="1_amrl7"]
+[ext_resource type="Texture2D" uid="uid://dqs88u12auy72" path="res://Scenes/Untitled - 12 June 2026 at 11.00.15.png" id="3_0xes2"]
+[ext_resource type="AudioStream" uid="uid://twuxqqhx01p3" path="res://Scenes/atlasaudio-suspense-tension-511877.mp3" id="3_epaux"]
 
 [node name="Control" type="Control" unique_id=2087167029]
 layout_mode = 3
@@ -16,12 +18,26 @@ script = ExtResource("1_amrl7")
 metadata/_edit_use_anchors_ = true
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=947035532]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
 stream = ExtResource("1_1qmx1")
 autoplay = true
 loop = true
+
+[node name="Untitled12June2026At11_00_15" type="Sprite2D" parent="." unique_id=1170536513]
+position = Vector2(184, 97)
+scale = Vector2(0.2880859, 0.2841797)
+texture = ExtResource("3_0xes2")
 
 [node name="Button" type="Button" parent="." unique_id=42445877]
 layout_mode = 0
@@ -30,5 +46,9 @@ offset_top = 907.0
 offset_right = 1056.0
 offset_bottom = 1009.0
 text = "Play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=199554633]
+stream = ExtResource("3_epaux")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

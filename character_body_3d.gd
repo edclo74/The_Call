@@ -14,6 +14,7 @@ extends CharacterBody3D
 @export var noise_emit_interval: float = 0.2
 
 # Nodes
+@onready var battery = $Battery
 @onready var player = $"."
 @onready var camera = $Camera3D
 @onready var hand = $Hand
@@ -28,6 +29,7 @@ extends CharacterBody3D
 @onready var fade_black = $CanvasLayer/ColorRect/fade_black
 @onready var flashlight_click = $flashlight_click
 @onready var animation_player = $"../AnimationPlayer"
+
 
 # State
 var mouse_sensitivity: float = 0.002
@@ -112,12 +114,15 @@ func check_ray_hit():
 		return
 	if collider.is_in_group("Batteries"):
 		interaction_notifier.visible = true
-		if Input.is_action_just_pressed("Use") and ObjectiveManager.get_current_objective().get("id") == "obj_1":
-			ObjectiveManager.complete_current_objective()
-			collider.queue_free()
-			flashlight.hidden = true
-			Global.flashlight_on = true
+		if Input.is_action_just_pressed("Use"):
+			BatteryScript.battery_current_charge = BatteryScript.battery_max_charge
+			BatteryScript.battery_charge_changed.emit(BatteryScript.battery_current_charge)
+			flashlight.hidden = false
+			BatteryScript.flashlight_on = true
 			flashlight_1.update_flashlight()
+			collider.queue_free()
+			if ObjectiveManager.get_current_objective().get("id") == "obj_1":
+				ObjectiveManager.complete_current_objective()
 	elif collider.is_in_group("Locker"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):

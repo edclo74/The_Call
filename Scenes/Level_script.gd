@@ -1,6 +1,10 @@
 extends Node3D
+@onready var world_environment: WorldEnvironment = $WorldEnvironment
 
 func _ready() -> void:
+	world_environment.environment.adjustment_enabled = true
+	world_environment.environment.ambient_light_energy = Settings.ambient_energy
+	print("Applied energy = ", world_environment.environment.ambient_light_energy)
 	#FORMAT = ObjectiveManager.add_objective(id: String, title: String, description: String = "")
 	ObjectiveManager.add_objective("obj_1", "obj_1", "pick up batteries")
 	ObjectiveManager.add_objective("obj_2", "obj_2", "find generator?")
