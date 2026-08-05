@@ -29,6 +29,7 @@ extends CharacterBody3D
 @onready var fade_black = $CanvasLayer/ColorRect/fade_black
 @onready var flashlight_click = $flashlight_click
 @onready var animation_player = $"../AnimationPlayer"
+@onready var KeyCard = $"../NavigationRegion3D/EDD LOVES NEW VRSIONS/KeyCard"
 
 
 # State
@@ -123,6 +124,8 @@ func check_ray_hit():
 			collider.queue_free()
 			if ObjectiveManager.get_current_objective().get("id") == "obj_1":
 				ObjectiveManager.complete_current_objective()
+	elif collider.is_in_group("Keycard"):
+		KeyCard.queue_free()
 	elif collider.is_in_group("Locker"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):

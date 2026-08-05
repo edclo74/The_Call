@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://rykg6xidl77p"]
-
-[ext_resource type="PackedScene" uid="uid://iapprqv1fneq" path="res://ED_IS_GOOD_AT_SERVERS.glb" id="1_31leg"]
-
-[node name="ED_IS_GOOD_AT_SERVERS" unique_id=1478852916 instance=ExtResource("1_31leg")]

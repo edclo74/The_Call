@@ -45,6 +45,7 @@ Batteries=""
 Locker=""
 generator_int=""
 player=""
+Keycard=""
 
 [input]
 
