@@ -1,13 +1,21 @@
 extends SpotLight3D
 
 # Drag your Camera3D node here
+@onready var base_energy = 3.376
 @onready var camera = $"../../Camera3D"
 @onready var flashlight = $"."
 @onready var player = $"../../"
 @onready var flashlight_model = $"../../Camera3D/players_hand222/Sketchfab_model/71578a57ec3f432aae1c5cfd4c8cb237_obj_cleaner_materialmerger_gles/Node3D"
 @onready var flashlight_click = $"../../flashlight_click"
+@export var flicker_range: float = 1.5
+# Speed of interpolation for smooth flickering
+@export var flicker_speed: float = 25.0
 
 var hidden = true
+
+
+var target_energy: float = 2.0
+
 
 func enter_locker():
 	hidden = true
@@ -17,6 +25,7 @@ func exit_locker():
 
 func _ready():
 	update_flashlight()
+	target_energy = base_energy
 
 func update_flashlight():
 	if BatteryScript.flashlight_on:
@@ -38,6 +47,9 @@ func _process(_delta):
 			flashlight_click.play()
 			hidden = !hidden
 			BatteryScript.flashlight_on = not hidden
+	if BatteryScript.battery_current_charge <= 25:
+		target_energy = base_energy + randf_range(-flicker_range, flicker_range)
+	light_energy = lerp(light_energy, target_energy, flicker_speed * _delta)
 
 	# Show/hide based on state
 	if hidden:

@@ -8,10 +8,10 @@ signal battery_depleted
 var flashlight_on: bool = false
 
 @export var battery_max_charge: float = 100.0
-@export var battery_drain_rate: float = 5.0    # charge per second while on
-@export var battery_recharge_rate: float = 10.0
+@export var battery_drain_rate: float = 1.5    # charge per second while on
+@export var battery_recharge_rate: float = 0
 
-var battery_current_charge: float = 100.0
+var battery_current_charge: float = 0
 
 func battery_drain(delta: float) -> void:
 	if battery_current_charge <= 0.0:

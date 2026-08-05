@@ -68,7 +68,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_wgk3e")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"battery_levels",
 "speed": 5.0
 }]
@@ -319,6 +319,7 @@ offset_bottom = 37.0
 value = 100.0
 
 [node name="Hide" type="TextureRect" parent="CanvasLayer" unique_id=309886807]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_rrwoe")
@@ -349,12 +350,11 @@ theme_override_fonts/font = ExtResource("3_s1vvi")
 script = ExtResource("4_e25u2")
 
 [node name="Battery_indicator" type="AnimatedSprite2D" parent="." unique_id=464008800]
-position = Vector2(69, 75)
+position = Vector2(90, 86)
+rotation = 1.5707964
 scale = Vector2(0.4041916, 0.37148595)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"battery_levels"
-frame = 2
-frame_progress = 0.92111814
 script = ExtResource("10_86gd5")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=634130509]

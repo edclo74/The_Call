@@ -137,7 +137,7 @@ func check_ray_hit():
 	elif collider.is_in_group("generator_int"):
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
-			animation_player.play("animation")
+			animation_player.play("light's")
 			for light in get_tree().get_nodes_in_group("indoor_lighting"):
 				light.visible = true
 	else:

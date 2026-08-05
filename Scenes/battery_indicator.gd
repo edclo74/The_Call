@@ -8,6 +8,7 @@ func _ready() -> void:
 	BatteryScript.battery_charge_changed.connect(_on_charge_changed)
 	print("READY - initial percent: ", BatteryScript.battery_get_percent())
 	_update_frame(BatteryScript.battery_get_percent())
+	print (sprite_frames.get_frame_count("battery_levels"))
 
 func _on_charge_changed(_new_charge: float) -> void:
 	print("SIGNAL RECEIVED - new_charge: ", _new_charge)
@@ -23,8 +24,8 @@ func _update_frame(percent: float) -> void:
 	print("new_index calculated: ", new_index)
 	if new_index != current_frame_index:
 		current_frame_index = new_index
-		frame = current_frame_index
 		stop()
+		frame = current_frame_index
 		print("FRAME SET TO: ", frame, " actual .frame property now: ", self.frame)
 	else:
 		print("Frame unchanged, staying at: ", current_frame_index)
