@@ -6,7 +6,7 @@ const RETARGET_COOLDOWN: float = 1.0
 @export var target: Node3D
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-
+var _pending_gravity_y: float = 0.0
 var _retarget_timer: float = 1.0
 
 
@@ -39,6 +39,7 @@ func _physics_process(p_delta: float) -> void:
 		velocity.z = velocity_xz.z
 	
 	velocity.y -= 40 * p_delta
+	_pending_gravity_y = velocity.y
 	
 	if nav_agent.avoidance_enabled:
 		nav_agent.set_velocity(velocity)
@@ -50,9 +51,42 @@ func _physics_process(p_delta: float) -> void:
 		var height: float = get_parent().terrain.data.get_height(global_position)
 		if not is_nan(height):
 			global_position.y = maxf(global_position.y, height)
+	velocity.y -= 40* p_delta
+	
+	var target_y := velocity.y
+	
+	if nav_agent.avoidance_enabled:
+		nav_agent.set_velocity(velocity)
+	else:
+		_on_velocity_computed(velocity)
+#func _physics_process(p_delta: float) -> void:
+	#if nav_agent.is_navigation_finished():
+		#velocity.x = 0.0
+		#velocity.z = 0.0
+	#else:
+		#var next_path_position: Vector3 = nav_agent.get_next_path_position()
+		#var current_agent_position: Vector3 = global_position
+		#var velocity_xz := (next_path_position - current_agent_position).normalized() * MOVE_SPEED
+		#velocity.x = velocity_xz.x
+		#velocity.z = velocity_xz.z
+		#velocity.y -= 40 * p_delta
+	#if nav_agent.avoidance_enabled:
+		#nav_agent.set_velocity(velocity)
+	#else:
+		#_on_velocity_computed(velocity)
 
+# Ensure enemy doesn't fall through terrain when collision absent
+	if get_parent().terrain:
+		var height: float = get_parent().terrain.data.get_height(global_position)
+		if not is_nan(height):
+			if global_position.y <= height:
+				global_position.y = height
+				velocity.y = 0.0   # <-- stop gravity from accumulating while grounded
+			else:
+				global_position.y = maxf(global_position.y, height)
 
 func _on_velocity_computed(p_safe_velocity: Vector3) -> void:
 	velocity.x = p_safe_velocity.x
 	velocity.z = p_safe_velocity.z
+	velocity.y = _pending_gravity_y
 	move_and_slide()

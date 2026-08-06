@@ -8722,7 +8722,43 @@ light_energy = 12.5
 spot_range = 17.555498
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="." unique_id=561213910 groups=["indoor_lighting"]]
-transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 22.290916, 53.767517, -25.159613)
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 23.72206, 47.934753, -25.159613)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="." unique_id=1217203396 groups=["indoor_lighting"]]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 23.72206, 47.934753, 7.9923954)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="." unique_id=676750571 groups=["indoor_lighting"]]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 23.72206, 47.934753, 88.40898)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="." unique_id=756350995 groups=["indoor_lighting"]]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, -18.114607, 47.934753, 88.40898)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="." unique_id=1948171432 groups=["indoor_lighting"]]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, -18.114607, 47.934753, 79.13977)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D24" type="SpotLight3D" parent="." unique_id=1259590249 groups=["indoor_lighting"]]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, -4.002039, 53.446167, 79.13977)
+light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
+light_energy = 12.5
+spot_range = 19.309944
+
+[node name="SpotLight3D25" type="SpotLight3D" parent="." unique_id=711708219 groups=["indoor_lighting"]]
+transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, -4.002039, 53.446167, -25.42492)
 light_color = Color(0.65882355, 0.7176471, 0.84705883, 1)
 light_energy = 12.5
 spot_range = 19.309944
@@ -8823,7 +8859,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.6399, 204.03748, -18.5399
 visible = false
 
 [node name="Area3D" parent="." unique_id=974555 instance=ExtResource("7_hjxs2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.67264, 40.96388, 1.5230012)
+transform = Transform3D(4.4840374, 0, 0, 0, 3.0180824, 0, 0, 0, 2.6428049, -44.18364, 40.00153, 2.3777657)
 
 [node name="CharacterBody3D2" parent="." unique_id=2011433988 instance=ExtResource("9_xbss4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.694122, 40.093178, -30.100958)

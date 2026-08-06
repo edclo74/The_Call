@@ -30,6 +30,7 @@ extends CharacterBody3D
 @onready var flashlight_click = $flashlight_click
 @onready var animation_player = $"../AnimationPlayer"
 @onready var KeyCard = $"../NavigationRegion3D/EDD LOVES NEW VRSIONS/KeyCard"
+@onready var flickering_light = $"../flickering_light"
 
 
 # State
@@ -123,7 +124,9 @@ func check_ray_hit():
 			flashlight_1.update_flashlight()
 			collider.queue_free()
 			if ObjectiveManager.get_current_objective().get("id") == "obj_1":
+				flickering_light.hide()
 				ObjectiveManager.complete_current_objective()
+
 	elif collider.is_in_group("Keycard"):
 		KeyCard.queue_free()
 	elif collider.is_in_group("Locker"):
