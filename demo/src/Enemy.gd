@@ -4,7 +4,7 @@ const RETARGET_COOLDOWN: float = 1.0
 
 @export var MOVE_SPEED: float = 50.0
 @export var target: Node3D
-
+@onready var path_line: MeshInstance3D = $PathDebugLine  # add this node in the scene
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var _pending_gravity_y: float = 0.0
 var _retarget_timer: float = 1.0
@@ -12,6 +12,11 @@ var _retarget_timer: float = 1.0
 
 func _ready() -> void:
 	nav_agent.velocity_computed.connect(_on_velocity_computed)
+	# ... existing _ready code ...
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color.RED
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	path_line.material_override = mat
 
 
 func _process(p_delta: float) -> void:

@@ -20,7 +20,7 @@ shape = SubResource("CapsuleShape3D_t4wq8")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1574774198]
 
 [node name="SightCast" type="RayCast3D" parent="." unique_id=501564045]
-transform = Transform3D(0.7108643, 0, 0.7033293, 0, 1, 0, -0.7033293, 0, 0.7108643, -0.24268332, 0.60580814, -0.37391663)
+transform = Transform3D(-4.3711392e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.3711392e-08, -0.42161933, 0.60580814, -0.082488656)
 target_position = Vector3(0, 0, -1)
 collision_mask = 3
 collide_with_areas = true
@@ -28,3 +28,6 @@ collide_with_areas = true
 [node name="PatrolTimer" type="Timer" parent="." unique_id=1337016799]
 wait_time = 3.0
 autostart = true
+
+[node name="KillCast" type="RayCast3D" parent="." unique_id=1850672077]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371138e-08, -0.99999994, 0, 0.9999998, -4.3711385e-08, 0.005253136, 0, 0.2790699)

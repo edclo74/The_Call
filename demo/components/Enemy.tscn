@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://di5fovhcyd7re"]
+[gd_scene format=3 uid="uid://di5fovhcyd7re"]
 
-[ext_resource type="Script" path="res://demo/src/Enemy.gd" id="1_yudyn"]
+[ext_resource type="Script" uid="uid://6j2rrp5f1gjs" path="res://demo/src/Enemy.gd" id="1_yudyn"]
+[ext_resource type="Script" uid="uid://ck4kjyix2i6pk" path="res://demo/components/path_debug_line.gd" id="2_13w7s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwhhq"]
 height = 1.5
@@ -12,23 +13,34 @@ height = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4cor"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="Enemy" type="CharacterBody3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppm4i"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h15bm"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=139152999]
 collision_layer = 2
 script = ExtResource("1_yudyn")
 
-[node name="CollisionShapeBody" type="CollisionShape3D" parent="."]
+[node name="CollisionShapeBody" type="CollisionShape3D" parent="." unique_id=2032522300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("CapsuleShape3D_lwhhq")
 
-[node name="CollisionShapeRay" type="CollisionShape3D" parent="."]
+[node name="CollisionShapeRay" type="CollisionShape3D" parent="." unique_id=720081598]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
 shape = SubResource("SeparationRayShape3D_i8f01")
 
-[node name="Body" type="MeshInstance3D" parent="."]
+[node name="Body" type="MeshInstance3D" parent="." unique_id=923165574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_lsqiy")
 surface_material_override/0 = SubResource("StandardMaterial3D_d4cor")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1494666041]
 path_desired_distance = 2.0
 debug_enabled = true
+
+[node name="PathDebugLine" type="MeshInstance3D" parent="." unique_id=1222996108]
+material_override = SubResource("StandardMaterial3D_ppm4i")
+mesh = SubResource("ArrayMesh_h15bm")
+script = ExtResource("2_13w7s")

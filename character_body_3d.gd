@@ -222,6 +222,9 @@ func _physics_process(delta):
 
 	velocity = target_velocity
 	move_and_slide()
+	
+func die() -> void:
+	queue_free() # or trigger death animation/game over
 
 func _on_pause_menu_quit() -> void:
 	get_tree().quit()
