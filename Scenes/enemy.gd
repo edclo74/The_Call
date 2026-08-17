@@ -13,7 +13,7 @@ extends CharacterBody3D
 @export var stuck_check_interval := 0.5   # how often we sample position
 @export var stuck_distance_threshold := 0.3  # must move at least this far per interval or we're "stuck"
 @export var stuck_grace_time := 1.5       # how many seconds of being stuck before we react
-
+@onready var kill_cast = $KillCast
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var sight_cast: RayCast3D = $SightCast
 @onready var patrol_timer: Timer = $PatrolTimer
@@ -45,6 +45,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if _check_kill_cast():
+		_kill_player()
+		return
 	if not player:
 		return
 	attack_timer -= delta
@@ -97,6 +100,9 @@ func _physics_process(delta: float) -> void:
 				state = State.PATROL
 				_pick_patrol_point()
 
+func _kill_player() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://Scenes/poo.tscn")
 
 # --- Stuck watchdog ---
 # Every `stuck_check_interval` seconds, check how far we've actually moved.
@@ -208,6 +214,12 @@ func _draw_debug_path() -> void:
 	var points := nav_agent.get_current_navigation_path()
 	if points.size() < 2:
 		return
+		
+func _check_kill_cast() -> bool:
+	if not kill_cast.is_colliding():
+		return false
+	var hit = kill_cast.get_collider()
+	return hit != null and hit == player
 
 
 func _try_attack() -> void:
