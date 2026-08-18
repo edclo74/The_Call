@@ -1,7 +1,6 @@
 extends Control
 
 @export var world_env: WorldEnvironment
-@onready var world_environment: WorldEnvironment = $WorldEnvironment
 @onready var test_world_environment: WorldEnvironment = $SubViewportContainer/SubViewport/WorldEnvironment
 
 func _on_h_slider_value_changed(value: float) -> void:

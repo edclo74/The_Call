@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bgynp87e4wi0j"]
 
 [ext_resource type="Script" uid="uid://cvr2k7vxp0c02" path="res://Scenes/enemy.gd" id="1_hghv2"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ppm4i"]
+[ext_resource type="PackedScene" uid="uid://gnyhb17kwreq" path="res://psx_base_male_-_playstation_character_-_low_poly.glb" id="2_1f0kj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t4wq8"]
 radius = 0.54541016
@@ -11,10 +10,11 @@ radius = 0.54541016
 collision_layer = 5
 script = ExtResource("1_hghv2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=860693124]
-mesh = SubResource("CapsuleMesh_ppm4i")
+[node name="Sketchfab_Scene" parent="." unique_id=901306928 instance=ExtResource("2_1f0kj")]
+transform = Transform3D(-6.895, 0, -6.0278006e-07, 0, 6.895, 0, 6.0278006e-07, 0, -6.895, 0, -0.8587068, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=741302742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27254236, 0)
 shape = SubResource("CapsuleShape3D_t4wq8")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1574774198]
