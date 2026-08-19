@@ -31,6 +31,8 @@ extends CharacterBody3D
 @onready var animation_player = $"../AnimationPlayer"
 @onready var KeyCard = $"../NavigationRegion3D/EDD LOVES NEW VRSIONS/KeyCard"
 @onready var flickering_light = $"../flickering_light"
+@onready var mesh_1 = $Camera3D/players_hand222
+@onready var mesh_2 = $Camera3D/players_hand222/Sketchfab_model
 
 
 # State
@@ -82,6 +84,9 @@ func _process(delta):
 			for l in lockers:
 				if l.player_ref == self:
 					flashlight.exit_locker()
+					mesh_1.visible = true
+					mesh_2.visible = true
+					hand.visible = true
 					l.exit(self)
 					global_position += -global_transform.basis.z * -2
 					break
@@ -135,6 +140,9 @@ func check_ray_hit():
 			fade_black.stop()
 			fade_black.play("new_animation")
 			flashlight.enter_locker()
+			hand.visible = false
+			mesh_1.visible = false
+			mesh_2.visible = false
 			collider.enter(player)
 			just_entered_locker = true
 			interaction_notifier.visible = false
