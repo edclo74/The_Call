@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nnvsot482sg2"]
 
 [ext_resource type="Script" uid="uid://cimucb4pptq6x" path="res://loading_screen.gd" id="1_oobaa"]
+[ext_resource type="FontFile" uid="uid://0qdlkkvxb184" path="res://Scenes/HeadlinerNo.45 DEMO.ttf" id="2_0t5xw"]
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=1697140806]
 script = ExtResource("1_oobaa")
@@ -14,14 +15,30 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1837768198]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -411.0
+offset_top = -150.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_0t5xw")
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=562259095]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.0
-offset_top = -189.0
-offset_right = 286.0
-offset_bottom = 189.0
+offset_left = -91.0
+offset_top = -50.0
+offset_right = 91.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0t5xw")
+theme_override_font_sizes/font_size = 100

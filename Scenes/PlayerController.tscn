@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vsk426dhulub" path="res://character_body_3d.gd" id="1_eplni"]
 [ext_resource type="Script" uid="uid://6bsvigauc3dq" path="res://Scenes/spot_light_3d.gd" id="2_crrsd"]
 [ext_resource type="PackedScene" uid="uid://d1m5agl1nhlaf" path="res://pause_menu.tscn" id="2_rrwoe"]
+[ext_resource type="FontFile" uid="uid://0qdlkkvxb184" path="res://Scenes/HeadlinerNo.45 DEMO.ttf" id="3_4akmf"]
 [ext_resource type="Texture2D" uid="uid://bsyplpt1gen3b" path="res://Sprite-0001-frame0-2.png" id="3_rrwoe"]
 [ext_resource type="FontFile" uid="uid://y34i38w165re" path="res://Scenes/LibertinusMath-Regular.ttf" id="3_s1vvi"]
 [ext_resource type="Script" uid="uid://b0wjenqxaaibw" path="res://Scenes/current_objective.gd" id="4_e25u2"]
@@ -269,16 +270,20 @@ max_stamina = 200.0
 unique_name_in_owner = true
 
 [node name="resume" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="0" unique_id=1173198314]
-theme_override_fonts/font = ExtResource("3_s1vvi")
+theme_override_fonts/font = ExtResource("3_4akmf")
+theme_override_font_sizes/font_size = 100
 
 [node name="options" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="1" unique_id=1024814017]
-theme_override_fonts/font = ExtResource("3_s1vvi")
+theme_override_fonts/font = ExtResource("3_4akmf")
+theme_override_font_sizes/font_size = 100
 
 [node name="main_menu" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="2" unique_id=1516160757]
-theme_override_fonts/font = ExtResource("3_s1vvi")
+theme_override_fonts/font = ExtResource("3_4akmf")
+theme_override_font_sizes/font_size = 100
 
 [node name="quit" parent="CanvasLayer/PauseMenu/pause_menu_box" parent_id_path=PackedInt32Array(234391712, 476150754) index="3" unique_id=413096846]
-theme_override_fonts/font = ExtResource("3_s1vvi")
+theme_override_fonts/font = ExtResource("3_4akmf")
+theme_override_font_sizes/font_size = 100
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2027474402]
 anchors_preset = 15
@@ -305,7 +310,7 @@ offset_right = 96.0
 offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_s1vvi")
+theme_override_fonts/font = ExtResource("3_4akmf")
 theme_override_font_sizes/font_size = 57
 text = "Press E To Collect"
 
@@ -315,6 +320,7 @@ offset_top = 10.0
 offset_right = 320.0
 offset_bottom = 37.0
 value = 100.0
+show_percentage = false
 
 [node name="Hide" type="TextureRect" parent="CanvasLayer" unique_id=309886807]
 visible = false
@@ -344,7 +350,7 @@ offset_left = 1716.0
 offset_top = 12.0
 offset_right = 1913.0
 offset_bottom = 100.0
-theme_override_fonts/font = ExtResource("3_s1vvi")
+theme_override_fonts/font = ExtResource("3_4akmf")
 script = ExtResource("4_e25u2")
 
 [node name="Battery_indicator" type="AnimatedSprite2D" parent="." unique_id=464008800]
