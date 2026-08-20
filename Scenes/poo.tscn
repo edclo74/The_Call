@@ -11,6 +11,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etpgp"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4akmf"]
+
 [node name="Control" type="Control" unique_id=2087167029]
 layout_mode = 3
 anchors_preset = 15
@@ -51,10 +53,13 @@ offset_left = 863.0
 offset_top = 907.0
 offset_right = 1056.0
 offset_bottom = 1009.0
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0.06666667, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("4_ai4ts")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4pvlq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_etpgp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4akmf")
 text = "Play"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=199554633]
