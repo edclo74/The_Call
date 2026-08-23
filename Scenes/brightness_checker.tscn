@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dswgiebfi2w4a" path="res://Scenes/ChatGPT_Image_Jun_12__2026_at_10_58_39_AM-removebg-preview.png" id="1_g2i6n"]
 [ext_resource type="Script" uid="uid://dok6l5he0h6mh" path="res://Scenes/brightness_checker.gd" id="1_r6d2v"]
+[ext_resource type="FontFile" uid="uid://0qdlkkvxb184" path="res://Scenes/HeadlinerNo.45 DEMO.ttf" id="3_yx5we"]
 
 [sub_resource type="FontFile" id="FontFile_0xlst"]
 cache/0/variation_coordinates = {}
@@ -111,12 +112,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -191.0
+offset_left = -418.5
 offset_top = 92.0
-offset_right = 256.0
-offset_bottom = 271.0
+offset_right = 483.5
+offset_bottom = 163.0
 grow_horizontal = 2
-text = "Change it so the blue is slightly visible"
+theme_override_fonts/font = ExtResource("3_yx5we")
+theme_override_font_sizes/font_size = 70
+text = "Use The Scroller So The Grey Is Barely Visible"
 
 [connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="HSlider/Button" to="." method="_on_button_pressed"]
