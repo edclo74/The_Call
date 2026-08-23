@@ -63,11 +63,11 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_yrei1")
 
 [sub_resource type="Environment" id="Environment_dfbmq"]
-background_color = Color(0, 0, 0.16470589, 1)
+background_color = Color(0.09411765, 0.09411765, 0.09411765, 1)
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_u67io")
 ambient_light_source = 2
-ambient_light_color = Color(0, 0, 0.14117648, 1)
+ambient_light_color = Color(0.09411765, 0.09411765, 0.09411765, 1)
 tonemap_mode = 2
 glow_enabled = true
 adjustment_enabled = true

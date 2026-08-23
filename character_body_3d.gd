@@ -33,6 +33,7 @@ extends CharacterBody3D
 @onready var flickering_light = $"../flickering_light"
 @onready var mesh_1 = $Camera3D/players_hand222
 @onready var mesh_2 = $Camera3D/players_hand222/Sketchfab_model
+@onready var animation_obj = $Current_Objective_
 
 
 # State
@@ -131,6 +132,7 @@ func check_ray_hit():
 			if ObjectiveManager.get_current_objective().get("id") == "obj_1":
 				flickering_light.hide()
 				ObjectiveManager.complete_current_objective()
+				animation_obj.play("animation1")
 
 	elif collider.is_in_group("Keycard"):
 		KeyCard.queue_free()

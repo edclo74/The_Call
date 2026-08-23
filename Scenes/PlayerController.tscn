@@ -32,6 +32,23 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_pno4h"]
+resource_name = "chase"
+length = 1.3666667
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.45, 0.62, 0.82, 1, 1.19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.09803922), Color(0, 0, 0, 0), Color(0, 0, 0, 0.3137255), Color(0, 0, 0, 0.09019608), Color(0, 0, 0, 0), Color(0, 0, 0, 0.4627451), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_a8u7r"]
 resource_name = "new_animation"
 length = 10.266666
@@ -51,6 +68,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4lww5"]
 _data = {
 &"RESET": SubResource("Animation_rrwoe"),
+&"chase": SubResource("Animation_pno4h"),
 &"new_animation": SubResource("Animation_a8u7r")
 }
 
@@ -261,30 +279,30 @@ animations = [{
 }]
 
 [sub_resource type="Animation" id="Animation_4akmf"]
-length = 0.001
+length = 5.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/current_objective:text")
+tracks/0/path = NodePath("CanvasLayer/current_objective:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
+"times": PackedFloat32Array(0, 2.98, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(746, 152), Vector2(746, 152), Vector2(1516, 2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/current_objective:position")
+tracks/1/path = NodePath("CanvasLayer/current_objective:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.98),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1518.0001, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_1inkg"]
@@ -415,15 +433,16 @@ theme_override_font_sizes/font_size = 60
 text = "Press X To Exit"
 
 [node name="current_objective" type="Label" parent="CanvasLayer" unique_id=1057924606]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 558.0001
-offset_top = -540.0
-offset_right = 755.00024
-offset_bottom = -440.00006
+offset_left = -214.0
+offset_top = -388.0
+offset_right = -16.997559
+offset_bottom = -287.99994
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.0400014, 1)
@@ -677,7 +696,6 @@ script = ExtResource("14_pno4h")
 
 [node name="Current_Objective_" type="AnimationPlayer" parent="." unique_id=246618697]
 libraries/ = SubResource("AnimationLibrary_pno4h")
-autoplay = &"animation1"
 
 [connection signal="main_menu" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_main_menu"]
 [connection signal="quit" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_quit"]
