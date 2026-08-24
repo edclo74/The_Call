@@ -12984,6 +12984,8 @@ data = PackedVector3Array(-2.2258687, 8.761363, -49.023834, 9.774132, 6.7613626,
 
 [sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t4wq8"]
+
 [sub_resource type="Animation" id="Animation_u67io"]
 length = 9.733334
 tracks/0/type = "value"
@@ -14550,6 +14552,13 @@ mesh = SubResource("SphereMesh_g4v7s")
 
 [node name="Card_Reader" parent="NavigationRegion3D/The Call" unique_id=340292118 instance=ExtResource("49_k4sj1")]
 transform = Transform3D(-1.1163415, 0, 19.483044, 0, 19.515, 0, -19.483044, 0, -1.1163415, -12.159821, 15.594753, 91.60486)
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/The Call/Card_Reader" unique_id=2025117278]
+transform = Transform3D(3.4192472, 0, 1.4901161e-08, 0, 3.7412066, 0, 0, 0, 1.7148292, 0.003191948, 0.01190567, 0.0012950897)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/The Call/Card_Reader/Area3D" unique_id=1609897276]
+transform = Transform3D(0.9999951, 0, -5.5879354e-08, 0, 0.99999654, 0, -2.9802322e-08, 0, 0.99999887, 0, 0, 0)
+shape = SubResource("BoxShape3D_t4wq8")
 
 [node name="SpotLight3D10" type="SpotLight3D" parent="." unique_id=619273457 groups=["indoor_lighting"]]
 transform = Transform3D(1, 0, 0, 0, -0.042050045, 0.9991155, 0, -0.9991155, -0.042050045, 22.290916, 53.767517, 8.043188)

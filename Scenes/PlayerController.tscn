@@ -399,7 +399,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_4akmf")
 theme_override_font_sizes/font_size = 57
-text = "Press E To Collect"
 
 [node name="SprintBar" type="ProgressBar" parent="CanvasLayer" unique_id=260480687]
 offset_left = 16.0

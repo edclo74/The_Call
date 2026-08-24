@@ -46,6 +46,7 @@ Locker=""
 generator_int=""
 player=""
 Keycard=""
+Keycard_Reader=""
 
 [input]
 

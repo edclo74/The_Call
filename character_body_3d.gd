@@ -121,6 +121,7 @@ func check_ray_hit():
 		interaction_notifier.visible = false
 		return
 	if collider.is_in_group("Batteries"):
+		interaction_notifier.text = "Press E To Use"
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			BatteryScript.battery_current_charge = BatteryScript.battery_max_charge
@@ -135,8 +136,10 @@ func check_ray_hit():
 				animation_obj.play("animation1")
 
 	elif collider.is_in_group("Keycard"):
+		Global.keycard = true
 		KeyCard.queue_free()
 	elif collider.is_in_group("Locker"):
+		interaction_notifier.text = "Press E To Hide"
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			fade_black.stop()
@@ -150,7 +153,10 @@ func check_ray_hit():
 			interaction_notifier.visible = false
 			camera_x_rotation = 0.0
 			camera.rotation.x = 0.0
+	elif collider.is_in_group("Keycard_Reader") and Global.Keycard == true:
+		pass #Code manager's room
 	elif collider.is_in_group("generator_int"):
+		interaction_notifier.text = "Press E To Turn On"
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			animation_player.play("light's")
