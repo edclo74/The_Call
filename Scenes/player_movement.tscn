@@ -1967,7 +1967,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jb7pd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k4sj1"]
-size = Vector3(2, 2, 2)
+size = Vector3(4.425, 48.145, 3.725)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xan3r"]
 resource_name = "Light Bulb Emission"
@@ -13426,14 +13426,14 @@ shape = SubResource("ConcavePolygonShape3D_ucy4b")
 transform = Transform3D(1.2540001, 0, 0, 0, 1.2540001, 0, 0, 0, 1.2540001, -1.6072475, 8.531036, 11.6236315)
 mesh = SubResource("ArrayMesh_btvfm")
 
-[node name="KeyCard" type="MeshInstance3D" parent="NavigationRegion3D/The Call" unique_id=1024581272 groups=["Keycard"]]
+[node name="KeyCard" type="MeshInstance3D" parent="NavigationRegion3D/The Call" unique_id=1024581272]
 transform = Transform3D(0.20101106, 0, 0, 0, -0.009752718, 0, 0, 0, 0.26058915, -35.501236, 2.2928772, 3.5903015)
 mesh = SubResource("ArrayMesh_2s8yx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/The Call/KeyCard" unique_id=2147053870 groups=["Keycard"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/The Call/KeyCard/StaticBody3D" unique_id=1616553404 groups=["Keycard"]]
-transform = Transform3D(3.740517, 0, 0, 0, 45.95266, 0, 0, 0, 2.1728911, 0, -49.453613, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/The Call/KeyCard/StaticBody3D" unique_id=1616553404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.282227, 0)
 shape = SubResource("BoxShape3D_k4sj1")
 
 [node name="Lamps" type="MeshInstance3D" parent="NavigationRegion3D/The Call" unique_id=889805336]
