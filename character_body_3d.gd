@@ -117,6 +117,7 @@ func check_ray_hit():
 	if is_hiding:
 		return
 	var collider = ray.get_collider()
+	print(collider)
 	if not ray.is_colliding() or collider == null:
 		interaction_notifier.visible = false
 		return
@@ -134,10 +135,12 @@ func check_ray_hit():
 				flickering_light.hide()
 				ObjectiveManager.complete_current_objective()
 				animation_obj.play("animation1")
-
 	elif collider.is_in_group("Keycard"):
-		Global.keycard = true
-		KeyCard.queue_free()
+		interaction_notifier.text = "Press E To Pick Up"
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			Global.keycard = true
+			KeyCard.queue_free()
 	elif collider.is_in_group("Locker"):
 		interaction_notifier.text = "Press E To Hide"
 		interaction_notifier.visible = true
@@ -154,6 +157,8 @@ func check_ray_hit():
 			camera_x_rotation = 0.0
 			camera.rotation.x = 0.0
 	elif collider.is_in_group("Keycard_Reader") and Global.Keycard == true:
+		interaction_notifier.text = "Press E To Swipe"
+		interaction_notifier.visible = true
 		pass #Code manager's room
 	elif collider.is_in_group("generator_int"):
 		interaction_notifier.text = "Press E To Turn On"
@@ -184,6 +189,7 @@ func _handle_stamina(delta: float, is_moving: bool) -> float:
 
 func _physics_process(delta):
 	check_ray_hit()
+
 	if is_hiding:
 		noise_level = 0.0
 		return
