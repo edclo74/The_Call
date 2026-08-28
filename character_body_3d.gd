@@ -15,7 +15,7 @@ extends CharacterBody3D
 @export var noise_emit_interval: float = 0.2
 
 # Nodes
-@export var fade_duration: float = 1.033 # set this to match new_animation's actual length in the editor
+@export var fade_duration: float = 1.033 
 @onready var battery = $Battery
 @onready var player = $"."
 @onready var camera = $Camera3D
@@ -143,7 +143,7 @@ func check_ray_hit():
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			Global.Keycard = true
-			KeyCard.queue_free()
+			collider.queue_free()
 	elif collider.is_in_group("Locker"):
 		interaction_notifier.text = "Press E To Hide"
 		interaction_notifier.visible = true
@@ -174,18 +174,42 @@ func check_ray_hit():
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			_use_door()
+			if ObjectiveManager.get_current_objective().get("id") == "obj_3":
+				_complete_objective()
 	elif collider.is_in_group("Keycard_Reader") and Global.Keycard == false:
 		interaction_notifier.text = "Key Card Required"
 		interaction_notifier.visible = true
+	elif collider.is_in_group("Manager_int"):
+		interaction_notifier.text = "Press E To Turn On"
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			if ObjectiveManager.get_current_objective().get("id") == "obj_4":
+				_complete_objective()
+			Global.end_door = true 
+			collider.queue_free()
+	elif collider.is_in_group("end_door") and Global.end_door == false:
+		interaction_notifier.text = "This Door Is Locked"
+		interaction_notifier.visible = true
+	elif collider.is_in_group("end_door") and Global.end_door == true:
+		interaction_notifier.text = "Press E To Turn On"
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 	elif collider.is_in_group("generator_int"):
 		interaction_notifier.text = "Press E To Turn On"
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
 			animation_player.play("light's")
+			collider.queue_free()
 			for light in get_tree().get_nodes_in_group("indoor_lighting"):
 				light.visible = true
-	else:
-		interaction_notifier.visible = false
+			if ObjectiveManager.get_current_objective().get("id") == "obj_2":
+				_complete_objective()
+		else:
+			interaction_notifier.visible = false
+
+
 
 func _handle_stamina(delta: float, is_moving: bool) -> float:
 	var current_speed = walk_speed
@@ -292,8 +316,9 @@ func _on_pause_menu_quit() -> void:
 
 
 func _on_pause_menu_main_menu() -> void:
-	get_tree().change_scene_to_file("res://Scenes/poo.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main_menu.tscn")
 	Global.flashlight_on = false
-	Global.generator_on = false
+	Global.generator_on  = false
 	Global.Keycard = false
 	Global.Manager_Room = false
+	Global.end_door = false

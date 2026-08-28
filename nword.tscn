@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://ky7c6puv6dwa"]
-
-[ext_resource type="PackedScene" uid="uid://b8hamvly5ji5v" path="res://Scenes/TheCallOutsidewithout grass 1.glb" id="1_ly3ai"]
-[ext_resource type="PackedScene" uid="uid://di7i10565cjnc" path="res://Scenes/PlayerController.tscn" id="2_n4tn1"]
-
-[node name="TheCallOutsidewithout grass 1" unique_id=1027480698 instance=ExtResource("1_ly3ai")]
-
-[node name="player" parent="Warehouse/StaticBody3D" parent_id_path=PackedInt32Array(1890887567) index="1" unique_id=1351378724 instance=ExtResource("2_n4tn1")]
-transform = Transform3D(0.79744816, 0, 0, 0, 0.79744816, 0, 0, 0, 0.79744816, -1.1206908, -2.3805542, -56.439316)

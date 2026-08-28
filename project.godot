@@ -50,6 +50,7 @@ Keycard_Reader=""
 Door=""
 Manager_Door=""
 Manager_int=""
+end_door=""
 
 [input]
 

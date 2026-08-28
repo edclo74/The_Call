@@ -7,10 +7,10 @@ func _ready() -> void:
 	print("Applied energy = ", world_environment.environment.ambient_light_energy)
 	#FORMAT = ObjectiveManager.add_objective(id: String, title: String, description: String = "")
 	ObjectiveManager.add_objective("obj_1", "obj_1", "Find Help")
-	ObjectiveManager.add_objective("obj_2", "obj_2", "Look For a Generator")
-	ObjectiveManager.add_objective("obj_3", "obj_3", "Activate Generator")
-	ObjectiveManager.add_objective("obj_4", "obj_4", "Gain Access To The Managers")
-	ObjectiveManager.add_objective("obj_5", "obj_5", "Escape")
+	ObjectiveManager.add_objective("obj_2", "obj_2", "Activate Generator")
+	ObjectiveManager.add_objective("obj_3", "obj_3", "Gain Access To The Manager's Room")
+	ObjectiveManager.add_objective("obj_4", "obj_4", "Use The Pc To Unlock Door")
+
 
 
 func _on_obj_2_checkpoint_body_entered(body: Node3D) -> void:

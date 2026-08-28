@@ -118,9 +118,10 @@ func _physics_process(delta: float) -> void:
 
 func _kill_player() -> void:
 	Global.flashlight_on = false
-	Global.generator_on = false
+	Global.generator_on  = false
 	Global.Keycard = false
 	Global.Manager_Room = false
+	Global.end_door = false
 	BatteryScript.battery_current_charge = 0
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://Scenes/poo.tscn")

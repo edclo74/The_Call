@@ -287,10 +287,10 @@ tracks/0/path = NodePath("CanvasLayer/current_objective:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.98, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2.98),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(746, 152), Vector2(746, 152), Vector2(1416.0001, 2)]
+"values": [Vector2(746, 152), Vector2(746, 152)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -318,7 +318,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.9666667, 3.5666666),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(760.00006, 139), Vector2(760.00006, 139), Vector2(1535, 11)]
+"values": [Vector2(760.00006, 139), Vector2(760.00006, 139), Vector2(723, 5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -435,8 +435,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -214.0
 offset_top = -388.0
-offset_right = 32.000122
-offset_bottom = -288.00018
+offset_right = 32.0
+offset_bottom = -288.0002
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.0400014, 1)
