@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://cukjbxa5fbha0" path="res://Scenes/battery_script.gd" id="14_pno4h"]
 
 [sub_resource type="Animation" id="Animation_rrwoe"]
-length = 0.001
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +51,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_a8u7r"]
 resource_name = "new_animation"
-length = 10.266666
+length = 1.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -279,7 +279,7 @@ animations = [{
 }]
 
 [sub_resource type="Animation" id="Animation_4akmf"]
-length = 5.0333333
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -290,7 +290,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.98, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(746, 152), Vector2(746, 152), Vector2(1516, 2)]
+"values": [Vector2(746, 152), Vector2(746, 152), Vector2(1416.0001, 2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -299,7 +299,7 @@ tracks/1/path = NodePath("CanvasLayer/current_objective:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.98),
+"times": PackedFloat32Array(0, 2.9666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -307,31 +307,30 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1inkg"]
 resource_name = "animation1"
-length = 7.0
-loop_mode = 1
+length = 3.5666666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/current_objective:text")
+tracks/0/path = NodePath("CanvasLayer/current_objective:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
+"times": PackedFloat32Array(0, 2.9666667, 3.5666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(760.00006, 139), Vector2(760.00006, 139), Vector2(1535, 11)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/current_objective:position")
+tracks/1/path = NodePath("CanvasLayer/current_objective:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.01),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.91, 3.5666666),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(760.00006, 139), Vector2(1518.0001, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pno4h"]
@@ -359,15 +358,11 @@ offset_bottom = 206.0
 theme_override_fonts/font = ExtResource("3_4akmf")
 theme_override_font_sizes/font_size = 100
 
-[node name="options" parent="CanvasLayer/PauseMenu/pause_menu_box" index="1" unique_id=1024814017]
+[node name="main_menu" parent="CanvasLayer/PauseMenu/pause_menu_box" index="1" unique_id=1516160757]
 theme_override_fonts/font = ExtResource("3_4akmf")
 theme_override_font_sizes/font_size = 100
 
-[node name="main_menu" parent="CanvasLayer/PauseMenu/pause_menu_box" index="2" unique_id=1516160757]
-theme_override_fonts/font = ExtResource("3_4akmf")
-theme_override_font_sizes/font_size = 100
-
-[node name="quit" parent="CanvasLayer/PauseMenu/pause_menu_box" index="3" unique_id=413096846]
+[node name="quit" parent="CanvasLayer/PauseMenu/pause_menu_box" index="2" unique_id=413096846]
 theme_override_fonts/font = ExtResource("3_4akmf")
 theme_override_font_sizes/font_size = 100
 
@@ -440,13 +435,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -214.0
 offset_top = -388.0
-offset_right = -16.997559
-offset_bottom = -287.99994
+offset_right = 32.000122
+offset_bottom = -288.00018
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.0400014, 1)
 theme_override_fonts/font = ExtResource("3_4akmf")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 40
 script = ExtResource("4_e25u2")
 
 [node name="Battery_indicator" type="AnimatedSprite2D" parent="." unique_id=464008800]
@@ -467,10 +462,9 @@ spot_angle = 73.28632
 
 [node name="SeeCast" type="RayCast3D" parent="Camera3D" unique_id=838013699]
 unique_name_in_owner = true
-transform = Transform3D(-52.060257, 0, -0.00070862425, 0, 38.170025, 0, 0.024630517, 0, -1.4978023, -0.04569379, 0.0039565563, -0.002386272)
+transform = Transform3D(-0.99568266, 0, -0.000896818, 0, 1, 0, 0.0004711307, 0, -1.8953259, -0.04569379, 0.0039565563, -0.002386272)
 target_position = Vector3(0, 0, 1.775)
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="players_hand222" type="Node3D" parent="Camera3D" unique_id=555003281]
 transform = Transform3D(-0.9999934, 0, 0.0035995482, 0, 1, 0, -0.003599548, 0, -0.9999934, 1.2581086, -2.8913565, 0.3438863)

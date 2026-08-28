@@ -47,6 +47,9 @@ generator_int=""
 player=""
 Keycard=""
 Keycard_Reader=""
+Door=""
+Manager_Door=""
+Manager_int=""
 
 [input]
 

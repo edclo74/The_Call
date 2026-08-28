@@ -5,6 +5,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t4wq8"]
 radius = 0.54541016
+height = 4.9211426
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=2011433988]
 collision_layer = 5
@@ -14,7 +15,7 @@ script = ExtResource("1_hghv2")
 transform = Transform3D(-6.895, 0, -6.0278006e-07, 0, 6.895, 0, 6.0278006e-07, 0, -6.895, 0, -0.8587068, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=741302742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27254236, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1880289, 0)
 shape = SubResource("CapsuleShape3D_t4wq8")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1574774198]

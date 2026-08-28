@@ -36,12 +36,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ksll0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gvnta")
 text = "RESUME"
 
-[node name="options" type="Button" parent="pause_menu_box" unique_id=1024814017]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ksll0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gvnta")
-text = "OPTIONS"
-
 [node name="main_menu" type="Button" parent="pause_menu_box" unique_id=1516160757]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ksll0")
@@ -55,6 +49,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gvnta")
 text = "QUIT"
 
 [connection signal="pressed" from="pause_menu_box/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="pause_menu_box/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="pause_menu_box/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="pause_menu_box/quit" to="." method="_on_quit_pressed"]

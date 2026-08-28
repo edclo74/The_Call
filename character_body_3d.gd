@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var walk_speed: float = 5.0
 @export var sprint_speed: float = 8.5
 @export var fall_acceleration: float = 75.0
+@export var door_teleport_distance: float = 4.0
 # Stamina
 @export var max_stamina: float = 100.0
 @export var drain_rate: float = 30.0
@@ -14,6 +15,7 @@ extends CharacterBody3D
 @export var noise_emit_interval: float = 0.2
 
 # Nodes
+@export var fade_duration: float = 1.033 # set this to match new_animation's actual length in the editor
 @onready var battery = $Battery
 @onready var player = $"."
 @onready var camera = $Camera3D
@@ -29,7 +31,7 @@ extends CharacterBody3D
 @onready var fade_black = $CanvasLayer/ColorRect/fade_black
 @onready var flashlight_click = $flashlight_click
 @onready var animation_player = $"../AnimationPlayer"
-@onready var KeyCard = $"../NavigationRegion3D/EDD LOVES NEW VRSIONS/KeyCard"
+@onready var KeyCard = $"../NavigationRegion3D/The Call/KeyCard"
 @onready var flickering_light = $"../flickering_light"
 @onready var mesh_1 = $Camera3D/players_hand222
 @onready var mesh_2 = $Camera3D/players_hand222/Sketchfab_model
@@ -46,6 +48,7 @@ var current_stamina: float = 100.0
 var is_exhausted: bool = false
 var is_hiding: bool = false
 var just_entered_locker: bool = false
+var is_transitioning: bool = false
 
 # Noise system
 signal noise_emitted(pos: Vector3, level: float)
@@ -54,6 +57,7 @@ var noise_level: float = 0.0
 
 
 func _ready():
+	animation_obj.play("animation1")
 	floor_max_angle = deg_to_rad(50.0)
 	for light in get_tree().get_nodes_in_group("indoor_lighting"):
 		light.visible = false
@@ -117,7 +121,7 @@ func check_ray_hit():
 	if is_hiding:
 		return
 	var collider = ray.get_collider()
-	print(collider)
+
 	if not ray.is_colliding() or collider == null:
 		interaction_notifier.visible = false
 		return
@@ -133,13 +137,12 @@ func check_ray_hit():
 			collider.queue_free()
 			if ObjectiveManager.get_current_objective().get("id") == "obj_1":
 				flickering_light.hide()
-				ObjectiveManager.complete_current_objective()
-				animation_obj.play("animation1")
+				_complete_objective()
 	elif collider.is_in_group("Keycard"):
 		interaction_notifier.text = "Press E To Pick Up"
 		interaction_notifier.visible = true
 		if Input.is_action_just_pressed("Use"):
-			Global.keycard = true
+			Global.Keycard = true
 			KeyCard.queue_free()
 	elif collider.is_in_group("Locker"):
 		interaction_notifier.text = "Press E To Hide"
@@ -156,10 +159,24 @@ func check_ray_hit():
 			interaction_notifier.visible = false
 			camera_x_rotation = 0.0
 			camera.rotation.x = 0.0
+	elif collider.is_in_group("Door"):
+		interaction_notifier.text = "Press E"
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			_use_door()
 	elif collider.is_in_group("Keycard_Reader") and Global.Keycard == true:
 		interaction_notifier.text = "Press E To Swipe"
 		interaction_notifier.visible = true
-		pass #Code manager's room
+		if Input.is_action_just_pressed("Use"):
+			Global.Manager_Room = true
+	elif collider.is_in_group("Manager_Door") and Global.Manager_Room == true:
+		interaction_notifier.text = "Press E"
+		interaction_notifier.visible = true
+		if Input.is_action_just_pressed("Use"):
+			_use_door()
+	elif collider.is_in_group("Keycard_Reader") and Global.Keycard == false:
+		interaction_notifier.text = "Key Card Required"
+		interaction_notifier.visible = true
 	elif collider.is_in_group("generator_int"):
 		interaction_notifier.text = "Press E To Turn On"
 		interaction_notifier.visible = true
@@ -187,8 +204,29 @@ func _handle_stamina(delta: float, is_moving: bool) -> float:
 	sprint_bar.value = current_stamina
 	return current_speed
 
+func _complete_objective() -> void:
+	ObjectiveManager.complete_current_objective()
+	animation_obj.play("animation1")
+
+func _use_door() -> void:
+	if is_transitioning:
+		return
+	is_transitioning = true
+	interaction_notifier.visible = false
+	fade_black.stop()
+	fade_black.play("new_animation")
+	global_position += global_transform.basis.z * door_teleport_distance
+	velocity = Vector3.ZERO
+	is_transitioning = false
+
+	is_transitioning = false
+
 func _physics_process(delta):
 	check_ray_hit()
+
+	if is_transitioning:
+		noise_level = 0.0
+		return
 
 	if is_hiding:
 		noise_level = 0.0
@@ -248,5 +286,14 @@ func _physics_process(delta):
 func die() -> void:
 	queue_free() # or trigger death animation/game over
 
+
 func _on_pause_menu_quit() -> void:
 	get_tree().quit()
+
+
+func _on_pause_menu_main_menu() -> void:
+	get_tree().change_scene_to_file("res://Scenes/poo.tscn")
+	Global.flashlight_on = false
+	Global.generator_on = false
+	Global.Keycard = false
+	Global.Manager_Room = false
